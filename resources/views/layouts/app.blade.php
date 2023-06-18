@@ -14,7 +14,7 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     {{-- PUBLIK ASSETS --}}
-    <link rel="shortcut icon" href="{{asset('publik/img/lg-klinik-fav.png')}}">
+    <link rel="shortcut icon" href="{{asset('publik/img/lg-vv-fav.png')}}">
     <link rel="stylesheet" href="{{asset('publik/css/plugins.css')}}">
     <link rel="stylesheet" href="{{asset('publik/css/style.css')}}">
     <link rel="preload" href="{{asset('publik/css/fonts/dm.css')}}" as="style" onload="this.rel='stylesheet'">

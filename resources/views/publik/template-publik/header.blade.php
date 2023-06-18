@@ -7,8 +7,8 @@
   <meta name="description" content="An impressive and flawless site template that includes various UI elements and countless features, attractive ready-made blocks and rich pages, basically everything you need to create a unique and professional website.">
   <meta name="keywords" content="bootstrap 5, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template">
   <meta name="author" content="elemis">
-  <title>Klinik Bersalin Hyung.ie</title>
-  <link rel="shortcut icon" href="{{asset('publik/img/lg-klinik-fav.png')}}">
+  <title>Viggie Vibe - E Commerce</title>
+  <link rel="shortcut icon" href="{{asset('publik/img/lg-vv-fav.png')}}">
   <link rel="stylesheet" href="{{asset('publik/css/plugins.css')}}">
   <link rel="stylesheet" href="{{asset('publik/css/style.css')}}">
   <link rel="preload" href="{{asset('publik/css/fonts/dm.css')}}" as="style" onload="this.rel='stylesheet'">
@@ -30,7 +30,7 @@
           </div>
           <div class="d-flex flex-row align-items-center">
             <div class="icon text-white fs-22 mt-1 me-2"> <i class="uil uil-message"></i></div>
-            <p class="mb-0"><a href="mailto:sandbox@email.com" class="link-white hover">bersalinhyung.ie@email.com</a></p>
+            <p class="mb-0"><a href="mailto:sandbox@email.com" class="link-white hover">viggie.vibe@email.com</a></p>
           </div>
         </div>
         <!-- /.container -->
@@ -39,12 +39,12 @@
         <div class="container flex-lg-row flex-nowrap align-items-center">
           <div class="navbar-brand w-100">
             <a href="{{url('/')}}">
-              <img src="{{asset('publik/img/lg-klinik.png')}}" srcset="{{asset('publik/img/lg-klinik.png')}}" class="logo-img" alt="" />
+              <img src="{{asset('publik/img/lg-vv.png')}}" srcset="{{asset('publik/img/lg-vv.png')}}" class="logo-img" alt="" />
             </a>
           </div>
           <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
             <div class="offcanvas-header d-lg-none">
-              <h3 class="text-white fs-30 mb-0">Klinik Bersalin Hyung.ie</h3>
+              <h3 class="text-white fs-30 mb-0">Viggie Vibe</h3>
               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
@@ -60,9 +60,6 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#artikel">Artikel</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#konsultasi">Konsultasi</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#kontak">Kontak Kami</a>

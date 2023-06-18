@@ -2,35 +2,47 @@
 {{-- extend digunakan untuk dapat memanggil semua code yang ada di dalam file tersebut --}}
 
 @section('content')
-
-<section class="bg-pattern-1" style="padding-bottom: 10px;">
-    <div class="container pt-15">
-      <div class="row gx-lg-0 gx-xl-8 gy-10 gy-md-13 gy-lg-0 mb-7 mb-md-10 mb-lg-16 align-items-center">
-        <div class="col-lg-6 mt-lg-n10 text-center text-lg-start" data-cues="slideInDown" data-group="page-title" data-delay="600">
-          <h1 class="display-1 mb-5">Klinik Berkualitas Untuk Lakukan Persalinan Normal</h1>
-          <p class="lead lh-sm mb-7 px-md-10 px-lg-0">Klinik kami memilih persalinan normal demi pemulihan lebih cepat serta kehamilan lebih sehat bagi mom & anak.</p>
-          <div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
-            <span><a href="#konsultasi" class="btn btn-lg btn-primary rounded-pill me-2">Konsultasi Sekarang</a></span>
-            <!-- <span><a href="#konsultasi" class="btn btn-lg btn-outline-primary rounded-pill">Konsultasi</a></span> -->
+<section class="wrapper bg-dark">
+  <div class="swiper-container swiper-hero dots-over" data-margin="0" data-autoplay="true" data-autoplaytime="7000" data-nav="true" data-dots="true" data-items="1">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide bg-overlay bg-overlay-400 bg-dark bg-image" data-image-src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80">
+          <div class="container h-100">
+            <div class="row h-100">
+              <div class="col-md-10 offset-md-1 col-lg-7 offset-lg-0 col-xl-6 col-xxl-5 text-center text-lg-start justify-content-center align-self-center align-items-start">
+                <h2 class="display-1 fs-56 mb-4 text-white animate__animated animate__slideInDown animate__delay-1s">We bring solutions to make life easier.</h2>
+                <p class="lead fs-23 lh-sm mb-7 text-white animate__animated animate__slideInRight animate__delay-2s">We are a creative company that focuses on long term relationships with customers.</p>
+                <div class="animate__animated animate__slideInUp animate__delay-3s"><a href="#" class="btn btn-lg btn-outline-white rounded-pill">Read More</a></div>
+              </div>
+              <!--/column -->
+            </div>
+            <!--/.row -->
           </div>
+          <!--/.container -->
         </div>
-        <!--/column -->
-        <div class="col-lg-6" data-cue="zoomIn">
-          <div class="shape bg-dot primary rellax w-17 h-19" data-rellax-speed="1" style="top: -1.7rem; left: 1.5rem;"></div>
-          <!-- <div class="shape rounded bg-soft-primary rellax d-md-block" data-rellax-speed="0" style="bottom: -1.8rem; right: -0.8rem; width: 85%; height: 90%;"></div> -->
-          <figure class="rounded">
-            <img src="{{asset('publik/img/illustrations/ilus1.png')}}" srcset="{{asset('publik/img/illustrations/ilus1.png')}}" style="    width: 65%;
-            margin: 0 auto;
-            margin-top: -40px;
-            display: block;
-            margin-top: 15px;" alt="" /></figure>
+        <!--/.swiper-slide -->
+        <div class="swiper-slide bg-overlay bg-overlay-400 bg-dark bg-image" data-image-src="https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80">
+          <div class="container h-100">
+            <div class="row h-100">
+              <div class="col-md-11 col-lg-8 col-xl-7 col-xxl-6 mx-auto text-center justify-content-center align-self-center">
+                <h2 class="display-1 fs-56 mb-4 text-white animate__animated animate__slideInDown animate__delay-1s">We are trusted by over a million customers.</h2>
+                <p class="lead fs-23 lh-sm mb-7 text-white animate__animated animate__slideInRight animate__delay-2s">Here a few reasons why our customers choose us.</p>
+                <div class="animate__animated animate__slideInUp animate__delay-3s"><a href="./assets/media/movie.mp4" class="btn btn-circle btn-white btn-play ripple mx-auto mb-5" data-glightbox><i class="icn-caret-right"></i></a></div>
+              </div>
+              <!--/column -->
+            </div>
+            <!--/.row -->
+          </div>
+          <!--/.container -->
         </div>
-        <!--/column -->
+        <!--/.swiper-slide -->
       </div>
-      <!-- /.row -->
+      <!--/.swiper-wrapper -->
     </div>
-  </section>
-  <!-- end banner -->
+    <!-- /.swiper -->
+  </div>
+  <!-- /.swiper-container -->
+</section>
 
   {{-- produk --}}
   <section id="produk" class="section bg-white">
@@ -113,45 +125,6 @@
     </div>
     <!-- /.container -->
   </section>
-
-  {{-- tentang --}}
-  <section id="tentang" class="section bg-pattern-3">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-8 col-lg-6 position-relative">
-          <a href="https://www.youtube.com/watch?v=dUl3vRjjs40" class="btn btn-circle btn-primary btn-play ripple mx-auto mb-5 position-absolute" style="top:50%; left: 50%; transform: translate(-50%,-50%); z-index:3;" data-glightbox><i class="icn-caret-right"></i></a>
-          <div class="shape rounded bg-soft-primary rellax d-md-block" data-rellax-speed="0" style="bottom: -1.8rem; right: -1.5rem; width: 85%; height: 90%; "></div>
-          <figure class="rounded"><img src="{{asset('publik/img/artikel/tentang.jpg')}}" srcset="{{asset('publik/img/artikel/tentang.jpg')}}" alt=""></figure>
-        </div>
-        <!--/column -->
-        <div class="col-lg-5 offset-lg-1">
-          <h2 class="fs-15 text-uppercase text-muted mb-3">Who Are We?</h2>
-          <h3 class="display-4">Tentang Klinik Bersalin<span class="text-warning">  Hyung.ie</span></h3>
-          <p class="">Di Klinik Bersalin <span class="text-warning"> Hyung.ie</span> kami tidak memandang seberapa praktisnya proses kelahiran dilakukan, tapi seberapa proses tersebut akan lebih menguntungkan untuk Mom & anak.</p>
-          <div class="row gy-3 gx-xl-8">
-            <div class="col-xl-6">
-              <ul class="icon-list bullet-bg bullet-soft-primary mb-0">
-                <li><span><i class="uil uil-check"></i></span><span>Pelayanan profesional & berkualitas tinggi.</span></li>
-                <li class="mt-3"><span><i class="uil uil-check"></i></span><span>Tenaga Medis tersertifikasi & berpengalaman.</span></li>
-              </ul>
-            </div>
-            <!--/column -->
-            <div class="col-xl-6">
-              <ul class="icon-list bullet-bg bullet-soft-primary mb-0">
-                <li><span><i class="uil uil-check"></i></span><span>Jaminan tempat yang bersih & steril.</span></li>
-                <li class="mt-3"><span><i class="uil uil-check"></i></span><span>Jaminan keamanan dalam klinik.</span></li>
-              </ul>
-            </div>
-            <!--/column -->
-          </div>
-          <!--/.row -->
-        </div>
-        <!--/column -->
-      </div>
-      <!--/.row -->
-    </div>
-  </section>
-
   
   <!-- layanan -->
   <section id="layanan" class="section bg-white">
@@ -167,29 +140,29 @@
       <div class="row gx-md-8 gy-8">
         <div class="col-md-6 col-lg-3">
           <div class="icon btn btn-block btn-lg btn-soft-yellow disabled mb-5"> <i class='bx bxs-check-circle'></i> </div>
-          <h4>Persalinan Normal</h4>
-          <p class="mb-3">Persalinan Normal yang Aman Untuk Bayi & Waktu Pemulihan Cepat Untuk Mom.              </p>
+          <h4>Ketersediaan Produk</h4>
+          <p class="mb-3">Pastikan supermarket memiliki stok yang cukup untuk memenuhi kebutuhan. </p>
           <a href="#" class="more hover link-yellow">Selengkapnya</a>
         </div>
         <!--/column -->
         <div class="col-md-6 col-lg-3">
           <div class="icon btn btn-block btn-lg btn-soft-red disabled mb-5"> <i class='bx bxs-check-circle'></i> </div>
-          <h4>Pemeriksaan Kehamilan</h4>
-          <p class="mb-3">Pemeriksaan Rutin & Pemenuhan Vitamin Serta Kalsium di Masa Kehamilan.</p>
+          <h4>Kebersihan dan Kerapihan</h4>
+          <p class="mb-3">Menjaga kebersihan dan kerapihan supermarket adalah hal yang sangat penting.</p>
           <a href="#" class="more hover link-red">Selengkapnya</a>
         </div>
         <!--/column -->
         <div class="col-md-6 col-lg-3">
           <div class="icon btn btn-block btn-lg btn-soft-leaf disabled mb-5"> <i class='bx bxs-check-circle'></i> </div>
-          <h4>Program Kehamilan</h4>
-          <p class="mb-3">Rencanakan Kehamilan Mom Bersama Ayah dengan Program Hamil dari Kehamilan Sehat.</p>
+          <h4> Ramah Pelanggan </h4>
+          <p class="mb-3">Memberikan pelayanan yang ramah dan sopan kepada pelanggan.</p>
           <a href="#" class="more hover link-leaf">Selengkapnya</a>
         </div>
         <!--/column -->
         <div class="col-md-6 col-lg-3">
           <div class="icon btn btn-block btn-lg btn-soft-blue disabled mb-5"> <i class='bx bxs-check-circle'></i> </div>
-          <h4>Farmasi & Laboratorium</h4>
-          <p class="mb-3">Obat/Vitamin Dengan Harga Lebih Rendah, Vaksinasi & Pemeriksaan Kondisi Janin Sebelum Persalinan.</p>
+          <h4>Waktu Tunggu yang Minim</h4>
+          <p class="mb-3">Usahakan agar waktu tunggu pelanggan di kasir sependek mungkin.</p>
           <a href="#" class="more hover link-blue">Selengkapnya</a>
         </div>
         <!--/column -->
@@ -206,7 +179,7 @@
       <div class="row">
         <div class="col-lg-9 col-xl-8 col-xxl-7 mx-auto text-center">
           <h2 class="fs-15 text-uppercase text-muted mb-3">DOCUMENTATION</h2>
-          <h3 class="display-4 mb-10">Galeri <span class="text-warning">Klinik</span></h3>
+          <h3 class="display-4 mb-10">Galeri <span class="text-warning"></span></h3>
         </div>
         <!-- /column -->
       </div>
@@ -214,20 +187,15 @@
         <div class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <figure class="rounded"><img src="{{asset('publik/img/artikel/galeri1.jpg')}}" alt="" /></figure>
+              <figure class="rounded"><img src="https://images.unsplash.com/photo-1548104144-32c5171cf929?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1475&q=80" alt="" /></figure>
+            </div>
+            <div class="swiper-slide">
+              <figure class="rounded"><img src="https://images.unsplash.com/photo-1557333610-90ee4a951ecf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="" /></figure>
+            </div>
+            <div class="swiper-slide">
+              <figure class="rounded"><img src="https://images.unsplash.com/photo-1553546895-531931aa1aa8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80" alt="" /></figure>
             </div>
             <!--/.swiper-slide -->
-            <div class="swiper-slide">
-              <figure class="rounded"><img src="{{asset('publik/img/artikel/galeri2.jpg')}}" alt="" /></figure>
-            </div>
-            <!--/.swiper-slide -->
-            <div class="swiper-slide">
-              <figure class="rounded"><img src="{{asset('publik/img/artikel/galeri3.jpg')}}" alt="" /></figure>
-            </div>
-            <!--/.swiper-slide -->
-            <div class="swiper-slide">
-              <figure class="rounded"><img src="{{asset('publik/img/artikel/galeri4.jpg')}}" alt="" /></figure>
-            </div>
           </div>
           <!--/.swiper-wrapper -->
         </div>
@@ -256,7 +224,7 @@
                 <div class="item-inner">
                   <article>
                     <div class="card">
-                      <figure class="card-img-top overlay overlay-1 hover-scale" style="height: 150px;overflow: hidden;"><a href="#"> <img src="{{asset('publik/img/artikel/galeri2.jpg')}}" alt="" /></a>
+                      <figure class="card-img-top overlay overlay-1 hover-scale" style="height: 150px;overflow: hidden;"><a href="#"> <img src="https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="" /></a>
                         <figcaption>
                           <h5 class="from-top mb-0">Selengkapnya</h5>
                         </figcaption>
@@ -264,16 +232,16 @@
                       <div class="card-body">
                         <div class="post-header">
                           <div class="post-category text-line d-flex justify-content-between">
-                            <a href="#" class="hover" rel="category">Kesehatan</a>
+                            <a href="#" class="hover" rel="category">Sayuran</a>
                             <small><i class="uil uil-calendar-alt"></i><span>14 Apr 2021</span></small>
                           </div>
                           <img class="mb-3 mt-3" src="https://dummy.smartcity.co.id/edu-asihputera/assets-home/images/ic/line.png" alt="line" style="display: block; margin: 0 auto; width: 30%; margin: ">
                           <!-- /.post-category -->
-                          <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="#">Tanda Diare Bayi yang..</a></h2>
+                          <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="#">Daftar Lima Sayuran..</a></h2>
                         </div>
                         <!-- /.post-header -->
                         <div class="post-content">
-                          <p>Tubuh bayi sangat sensitif terhadap virus yang ada di barang-barang sekitarnya...</p>
+                          <p>Makanan jenis sayuran bisa dikonsumsi oleh siapa saja tanpa mengenal...</p>
                         </div>
                         <!-- /.post-content -->
                       </div>
@@ -290,7 +258,7 @@
                 <div class="item-inner">
                   <article>
                     <div class="card">
-                      <figure class="card-img-top overlay overlay-1 hover-scale" style="height: 150px;overflow: hidden;"><a href="#"> <img src="{{asset('publik/img/artikel/galeri3.jpg')}}" alt="" /></a>
+                      <figure class="card-img-top overlay overlay-1 hover-scale" style="height: 150px;overflow: hidden;"><a href="#"> <img src="https://akcdn.detik.net.id/community/media/visual/2022/04/04/ilustrasi-sayuran_169.jpeg?w=700&q=90" alt="" /></a>
                         <figcaption>
                           <h5 class="from-top mb-0">Selengkapnya</h5>
                         </figcaption>
@@ -298,16 +266,16 @@
                       <div class="card-body">
                         <div class="post-header">
                           <div class="post-category text-line d-flex justify-content-between">
-                            <a href="#" class="hover" rel="category">Kesehatan</a>
+                            <a href="#" class="hover" rel="category">Sayuran</a>
                             <small><i class="uil uil-calendar-alt"></i><span>14 Apr 2021</span></small>
                           </div>
                           <img class="mb-3 mt-3" src="https://dummy.smartcity.co.id/edu-asihputera/assets-home/images/ic/line.png" alt="line" style="display: block; margin: 0 auto; width: 30%; margin: ">
                           <!-- /.post-category -->
-                          <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="#">Toxoplasma pada Ibu Hamil</a></h2>
+                          <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="#">10 Jenis Sayuran yang..</a></h2>
                         </div>
                         <!-- /.post-header -->
                         <div class="post-content">
-                          <p> Apabila Mommil memiliki peliharaan kucing di rumah, risiko toxoplasma mungkin membuat takut...</p>
+                          <p> Setiap harinya manusia wajib mengkonsumsi sayuran agar...</p>
                         </div>
                         <!-- /.post-content -->
                       </div>
@@ -324,7 +292,7 @@
                 <div class="item-inner">
                   <article>
                     <div class="card">
-                      <figure class="card-img-top overlay overlay-1 hover-scale" style="height: 150px;overflow: hidden;"><a href="#"> <img src="{{asset('publik/img/artikel/galeri4.jpg')}}" alt="" /></a>
+                      <figure class="card-img-top overlay overlay-1 hover-scale" style="height: 150px;overflow: hidden;"><a href="#"> <img src="https://assets.kompasiana.com/items/album/2023/06/15/kacang-panjang-20180219-190836-648a6a4b4d498a0f763e60c3.jpg?t=o&v=770" alt="" /></a>
                         <figcaption>
                           <h5 class="from-top mb-0">Selengkapnya</h5>
                         </figcaption>
@@ -332,16 +300,16 @@
                       <div class="card-body">
                         <div class="post-header">
                           <div class="post-category text-line d-flex justify-content-between">
-                            <a href="#" class="hover" rel="category">Kesehatan</a>
+                            <a href="#" class="hover" rel="category">Sayuran</a>
                             <small><i class="uil uil-calendar-alt"></i><span>14 Apr 2021</span></small>
                           </div>
                           <img class="mb-3 mt-3" src="https://dummy.smartcity.co.id/edu-asihputera/assets-home/images/ic/line.png" alt="line" style="display: block; margin: 0 auto; width: 30%; ">
                           <!-- /.post-category -->
-                          <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="#">Ikan yang Boleh dan Tidak</a></h2>
+                          <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="#">Pantun Sayur Kacang</a></h2>
                         </div>
                         <!-- /.post-header -->
                         <div class="post-content">
-                          <p>Mommil tentu saja menginginkan yang terbaik untuk calon buah hati sejak dalam kandungan...</p>
+                          <p>Mau jantung lebih sehat? Konsumsi sayur kacang panjang lebih sering...</p>
                         </div>
                         <!-- /.post-content -->
                       </div>
@@ -354,40 +322,7 @@
                 <!-- /.item-inner -->
               </div>
               <!--/.swiper-slide -->
-              <div class="swiper-slide">
-                <div class="item-inner">
-                  <article>
-                    <div class="card">
-                      <figure class="card-img-top overlay overlay-1 hover-scale" style="height: 150px;overflow: hidden;"><a href="#"> <img src="{{asset('publik/img/artikel/galeri1.jpg')}}" alt="" /></a>
-                        <figcaption>
-                          <h5 class="from-top mb-0">Selengkapnya</h5>
-                        </figcaption>
-                      </figure>
-                      <div class="card-body">
-                        <div class="post-header">
-                          <div class="post-category text-line d-flex justify-content-between">
-                            <a href="#" class="hover" rel="category">Kesehatan</a>
-                            <small><i class="uil uil-calendar-alt"></i><span>14 Apr 2021</span></small>
-                          </div>
-                          <img class="mb-3 mt-3" src="https://dummy.smartcity.co.id/edu-asihputera/assets-home/images/ic/line.png" alt="line" style="display: block; margin: 0 auto; width: 30%; ">
-                          <!-- /.post-category -->
-                          <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="#">Persalinan Normal yang Aman</a></h2>
-                        </div>
-                        <!-- /.post-header -->
-                        <div class="post-content">
-                          <p>Rencanakan Kehamilan Mom Bersama Ayah dengan Program Hamil dari Klinik Bersalin Hyung.ie</p>
-                        </div>
-                        <!-- /.post-content -->
-                      </div>
-                      <!--/.card-body -->
-                    </div>
-                    <!-- /.card -->
-                  </article>
-                  <!-- /article -->
-                </div>
-                <!-- /.item-inner -->
-              </div>
-              <!--/.swiper-slide -->
+              
             </div>
             <!--/.swiper-wrapper -->
           </div>
@@ -400,43 +335,6 @@
     <!-- /.container -->
   </section>
   <!-- /section -->
-  
-  <section id="konsultasi" class="section">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6">
-          <h2 class="display-4 mb-3">Konsultasi <span class="text-warning">Kehamilan</span> Sekarang!!</h2>
-          <p class="lead fs-lg mb-6">Pelayanan Konsultasi ini dapat membantu anda dalam mengetahui informasi yang belum anda pahami.</p>
-          
-        </div>
-        <!--/column -->
-        <div class="col-md-6 col-lg-6 position-relative">
-          <form action="">
-            <div class="form-floating mb-4">
-              <input id="textInputExample" type="text" class="form-control" placeholder="Nama Lengkap">
-              <label for="textInputExample">Nama Lengkap</label>
-            </div>
-            <div class="form-floating mb-4">
-              <input id="textInputExample" type="email" class="form-control" placeholder="Email">
-              <label for="textInputExample">Email</label>
-            </div>
-            <div class="form-floating mb-4">
-              <textarea id="textareaExample" class="form-control" placeholder="Isi Pesan" style="height: 100px" required></textarea>
-              <label for="textareaExample">Isi Pesan</label>
-            </div>
-            <div style="text-align: right;">
-              <span><a href="#" class="btn btn-lg btn-primary rounded-pill me-2">Kirim</a></span>
-            </div>
-            <!-- /.form-floating -->
-          </form>
-        </div>
-        <!--/column -->
-        
-      </div>
-      <!--/.row -->
-    </div>
-  </section>
-
   
   <section class="section">
     <div class="container"></div>
