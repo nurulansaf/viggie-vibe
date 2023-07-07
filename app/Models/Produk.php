@@ -13,11 +13,11 @@ class Produk extends Model
     protected $table = 'produk';
 
     public $timestamps = false;
-    protected $primarykey = 'id';
+    protected $primarykey = 'id_produk';
 
     protected $fillable = [
-        'kode',
-        'nama',
+        'kode_produk',
+        'nama_produk',
         'harga_jual',
         'harga_beli',
         'stok',
@@ -32,8 +32,8 @@ class Produk extends Model
 
     public function getAllData(){
         $alldata = DB::table('produk')
-        ->join('kategori_produk', 'produk.kategori_produk_id', '=', 'kategori_produk.id')
-        ->select('produk.*', 'kategori_produk.nama as nama_kategori')
+        ->join('kategori_produk', 'produk.kategori_produk_id', '=', 'kategori_produk.id_kategori')
+        ->select('produk.*', 'kategori_produk.nama_kategori')
         ->get();
         return $alldata;
     }

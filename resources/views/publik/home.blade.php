@@ -88,7 +88,7 @@
                       <div class="post-category text-ash mb-0">{{ $prod->nama_kategori }}</div>
                       <span class="ratings five"></span>
                     </div>
-                    <h2 class="post-title h3 fs-22"><a href="./shop-product.html" class="link-dark">{{ $prod->nama }}</a></h2>
+                    <h2 class="post-title h3 fs-22"><a href="./shop-product.html" class="link-dark">{{ $prod->nama_produk }}</a></h2>
                     <p class="price"><del><span class="amount">{{ $prod->harga_jual }}</span></del> </p>
                   </div>
                   <!-- /.post-header -->

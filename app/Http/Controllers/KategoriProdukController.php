@@ -41,7 +41,7 @@ class KategoriProdukController extends Controller
         // kembalikan ke tampilan produk, setelah klik button submit 
 
         $kat = new KategoriProduk();
-        $kat->nama = $request->nama;
+        $kat->nama_kategori = $request->nama_kategori;
 
         $kat->save();
         return redirect('admin/kategoriproduk');
@@ -79,7 +79,7 @@ class KategoriProdukController extends Controller
         // buka tbale produk
         // cari data yang ingn di hapus berdasarkan id
         // hapus data menggunakan method delete()
-        DB::table('kategori_produk')->where('id', $id)->delete();
+        DB::table('kategori_produk')->where('id_kategori', $id)->delete();
         return redirect('admin/kategoriproduk');
     }
 }

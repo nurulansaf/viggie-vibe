@@ -42,8 +42,8 @@ class ProdukController extends Controller
         // kembalikan ke tampilan produk, setelah klik button submit 
 
         $produk = new Produk();
-        $produk->kode               = $request->kode;
-        $produk->nama               = $request->nama;
+        $produk->kode_produk               = $request->kode_produk;
+        $produk->nama_produk               = $request->nama_produk;
         $produk->harga_jual         = $request->harga_jual;
         $produk->harga_beli         = $request->harga_beli;
         $produk->stok               = $request->stok;
@@ -70,7 +70,7 @@ class ProdukController extends Controller
     {
         //
         $kategori_produk = DB::table('kategori_produk')->get();
-        $produk = DB::table('produk')->where('id', $id)->get();
+        $produk = DB::table('produk')->where('id_produk', $id)->get();
         return view('admin.produk.edit_produk', compact('produk', 'kategori_produk'));
     }
 
@@ -81,8 +81,8 @@ class ProdukController extends Controller
     {
         // 
         $produk = Produk::find($request->id);
-        $produk->kode               = $request->kode;
-        $produk->nama               = $request->nama;
+        $produk->kode_produk               = $request->kode_produk;
+        $produk->nama_produk               = $request->nama_produk;
         $produk->harga_jual         = $request->harga_jual;
         $produk->harga_beli         = $request->harga_beli;
         $produk->stok               = $request->stok;
@@ -102,7 +102,7 @@ class ProdukController extends Controller
         // buka tbale produk
         // cari data yang ingn di hapus berdasarkan id
         // hapus data menggunakan method delete()
-        DB::table('produk')->where('id', $id)->delete();
+        DB::table('produk')->where('id_produk', $id)->delete();
         return redirect('admin/produk');
         
     }
