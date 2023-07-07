@@ -1,13 +1,18 @@
 @include('admin.layout.top')
-@include('admin.layout.menu')
-
-<div id="layoutSidenav_content">
-    <main>
-        <div class="container-fluid px-4">
-            {{-- sisipkan content badan nya --}}
-        @yield('content')
+<div id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Main Content -->
+        @include('admin.layout.menu')
+        <div id="content">
+            <main>
+                <div class="container-fluid px-4">
+                    {{-- sisipkan content badan nya --}}
+                @yield('content')
+                </div>
+            </main>
         </div>
-    </main>
+    </div>
 </div>
 </div>
 
