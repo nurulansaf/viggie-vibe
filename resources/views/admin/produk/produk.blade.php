@@ -15,7 +15,9 @@ semua code yang ada di dalam file yang di extends -->
     </ol>
     <div class="card mb-4">
         <div class="card-header">
+        @if (Auth::user()->role == 'admin')
             <a href="{{ url('admin/addproduk') }}" class="btn btn-primary">Tambah Data</a>
+        @endif
         </div>
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
@@ -34,7 +36,9 @@ semua code yang ada di dalam file yang di extends -->
                         <th>Minimal Stok</th>
                         <th>Deskripsi</th>
                         <th>Kategori Produk</th>
+                        @if (Auth::user()->role == 'admin')
                         <th>Action</th>
+                        @endif
                     </tr>
                 </thead>
                 <tbody>
@@ -44,16 +48,18 @@ semua code yang ada di dalam file yang di extends -->
                     @foreach ($produk as $prod)
                     <tr>
                         <td>{{ $no }}</td>
-                        <td>{{ $prod->kode }}</td>
-                        <td>{{ $prod->nama }}</td>
+                        <td>{{ $prod->kode_produk }}</td>
+                        <td>{{ $prod->nama_produk }}</td>
                         <td>{{ $prod->harga_jual }}</td>
                         <td>{{ $prod->harga_beli }}</td>
                         <td>{{ $prod->stok }}</td>
                         <td>{{ $prod->min_stok }}</td>
                         <td>{{ $prod->deskripsi }}</td>
-                        <td>{{ $prod->nama_kategori }}</td>
-                        <td><a href="{{ url('admin/editproduk/'. $prod->id) }}" class="btn btn-success">Edit</a></td>
-                        <td><a href="{{ url('admin/deleteproduk/'. $prod->id) }}" class="btn btn-danger">Delete</a></td>
+                        <td>{{ $prod->kategori_produk_id }}</td>
+                        @if (Auth::user()->role == 'admin')
+                        <td><a href="{{ url('admin/editproduk/'. $prod->id_produk) }}" class="btn btn-success">Edit</a></td>
+                        <td><a href="{{ url('admin/deleteproduk/'. $prod->id_produk) }}" class="btn btn-danger">Delete</a></td>
+                        @endif
                     </tr>
                     @php
                         $no++

@@ -27,7 +27,7 @@ class ProdukController extends Controller
 
         // menampilkan seluruh data produk
         $produk = Produk::all();
-        return view('admin.produk.add_produk', compact('kategori_produk','produk'));
+        return view('admin.produk.add_produk', compact('kategori_produk', 'produk'));
     }
 
     /**
@@ -44,6 +44,7 @@ class ProdukController extends Controller
         $produk = new Produk();
         $produk->kode_produk               = $request->kode_produk;
         $produk->nama_produk               = $request->nama_produk;
+        $produk->gambar_produk               = $request->gambar_produk;
         $produk->harga_jual         = $request->harga_jual;
         $produk->harga_beli         = $request->harga_beli;
         $produk->stok               = $request->stok;
@@ -80,18 +81,22 @@ class ProdukController extends Controller
     public function update(Request $request)
     {
         // 
-        $produk = Produk::find($request->id);
-        $produk->kode_produk               = $request->kode_produk;
-        $produk->nama_produk               = $request->nama_produk;
-        $produk->harga_jual         = $request->harga_jual;
-        $produk->harga_beli         = $request->harga_beli;
-        $produk->stok               = $request->stok;
-        $produk->min_stok           = $request->min_stok;
-        $produk->deskripsi          = $request->deskripsi;
-        $produk->kategori_produk_id = $request->kategori_produk_id;
+        Produk::where('id_produk', $request->id)->update([
+            'kode_produk'               => $request->kode_produk,
+            'nama_produk'               => $request->nama_produk,
+            'gambar_produk'             => $request->gambar_produk,
+            'harga_jual'                => $request->harga_jual,
+            'harga_beli'                => $request->harga_beli,
+            'stok'                      => $request->stok,
+            'min_stok'                  => $request->min_stok,
+            'deskripsi'                 => $request->deskripsi,
+            'kategori_produk_id'        => $request->kategori_produk_id,
+        ]);
 
-        $produk->save();
-        return redirect('admin/produk');    
+        // $produk->save();
+
+
+        return redirect('admin/produk');
     }
 
     /**
@@ -104,6 +109,5 @@ class ProdukController extends Controller
         // hapus data menggunakan method delete()
         DB::table('produk')->where('id_produk', $id)->delete();
         return redirect('admin/produk');
-        
     }
 }

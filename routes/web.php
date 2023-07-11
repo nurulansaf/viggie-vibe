@@ -9,6 +9,7 @@ use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+
 use App\Http\Controllers\InputController;
 use App\Http\Controllers\ForminputController;
 
@@ -28,7 +29,6 @@ use App\Http\Controllers\ForminputController;
 // });
 
 Route::get('/', [PublikController::class, 'index']);
-
 
 Route::get('/salam', function () {
     return "Selamat Siang Pak Rojul";
@@ -66,37 +66,37 @@ Route::prefix('Mahasiswa')->group(function () {
     Route::post('/output_form', [MahasiswaController::class, 'output_form']);
 });
 
-// dashboadr
-Route::group(['middleware' => ['auth']], function(){
-Route::prefix('admin')->group(function () {
-    // Controller : Dashboard
-    Route::get('/dashboard', [DashboardController::class, 'index']);
-    Route::get('/logout', [DashboardController::class, 'logout']);
+// dashboard
+Route::group(['middleware' => ['auth', 'adminmanager']], function () {
+    Route::prefix('admin')->group(function () {
+        // Controller : Dashboard
+        Route::get('/dashboard', [DashboardController::class, 'index']);
+        Route::get('/logout', [DashboardController::class, 'logout']);
 
-    // Controller : Produk
-    Route::get('/produk', [ProdukController::class, 'index']);
-    Route::get('/addproduk', [ProdukController::class, 'create']);
-    Route::post('/storeproduk', [ProdukController::class, 'store']);
-    Route::get('/editproduk/{id}', [ProdukController::class, 'edit']);
-    Route::post('/proses_editproduk/{id}', [ProdukController::class, 'update']);
-    Route::get('/deleteproduk/{id}', [ProdukController::class, 'destroy']);
+        // Controller : Produk
+        Route::get('/produk', [ProdukController::class, 'index']);
+        Route::get('/addproduk', [ProdukController::class, 'create']);
+        Route::post('/storeproduk', [ProdukController::class, 'store']);
+        Route::get('/editproduk/{id}', [ProdukController::class, 'edit']);
+        Route::post('/proses_editproduk/{id}', [ProdukController::class, 'update']);
+        Route::get('/deleteproduk/{id}', [ProdukController::class, 'destroy']);
 
+        // Controller : Kategori Produk
+        Route::get('/kategoriproduk', [KategoriProdukController::class, 'index']);
+        Route::get('/addkategoriproduk', [KategoriProdukController::class, 'create']);
+        Route::post('/storekategoriproduk', [KategoriProdukController::class, 'store']);
+        Route::get('/deletekategoriproduk/{id}', [KategoriProdukController::class, 'destroy']);
 
-    // Controller : Kategori Produk
-    Route::get('/kategoriproduk', [KategoriProdukController::class, 'index']); 
-    Route::get('/addkategoriproduk', [KategoriProdukController::class, 'create']);
-    Route::post('/storekategoriproduk', [KategoriProdukController::class, 'store']);
-    Route::get('/deletekategoriproduk/{id}', [KategoriProdukController::class, 'destroy']);
-
-     // Controller : Pesanan
-     Route::get('/pesanan', [PesananController::class, 'index']);
-     Route::get('/addpesanan', [PesananController::class, 'create']);
-     Route::post('/storepesanan', [PesananController::class, 'store']);
-     Route::get('/editpesanan/{id}', [PesananController::class, 'edit']);
-     Route::post('/proses_editpesanan/{id}', [PesananController::class, 'update']);
-     Route::get('/deletepesanan/{id}', [PesananController::class, 'destroy']);
-
-});
+        // Controller : Pesanan
+        Route::get('/pesanan', [PesananController::class, 'index']);
+        Route::get('/addpesanan', [PesananController::class, 'create']);
+        Route::post('/storepesanan', [PesananController::class, 'store']);
+        Route::get('/editpesanan/{id}', [PesananController::class, 'edit']);
+        Route::get('/detailpesanan/{id}', [PesananController::class, 'show']);
+        Route::post('/proses_editpesanan/{id}', [PesananController::class, 'update']);
+        Route::get('/deletepesanan/{id}', [PesananController::class, 'destroy']);
+        
+    });
 });
 
 Route::prefix('Publik')->group(function () {
@@ -106,3 +106,7 @@ Route::prefix('Publik')->group(function () {
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/pesanan_item', function () {
+    return '';
+});
