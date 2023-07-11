@@ -2,13 +2,13 @@
 
 @section('content')
 <!-- code untuk form -->
-<form method="POST" action="{{ url('admin/storekategoriproduk') }}">
+<form method="POST" action="{{ url('admin/storemetodepembayaran') }}">
     {{ csrf_field() }}
-    <h4 style="text-align: center">Form Tambah Data Kategori Produk</h4>
+    <h4 style="text-align: center">Form Tambah Data Metode Pembayaran</h4>
     <div class="form-group row">
-        <label for="nama_kategori" class="col-4 col-form-label">Nama Kategori</label> 
+        <label for="nama_metode" class="col-4 col-form-label">Metode Pembayaran</label> 
         <div class="col-8">
-        <input id="nama_kategori" name="nama_kategori" type="text" class="form-control" spellcheck="false" data-ms-editor="true">
+        <input id="nama_metode" name="nama_metode" type="text" class="form-control" spellcheck="false" data-ms-editor="true">
         </div>
     </div>
     <div class="form-group row">

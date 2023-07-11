@@ -13,27 +13,29 @@ class Produk extends Model
     protected $table = 'produk';
 
     public $timestamps = false;
+
     protected $primarykey = 'id_produk';
 
     protected $fillable = [
         'kode_produk',
         'nama_produk',
-        'harga_jual',
-        'harga_beli',
+        'gambar_produk',
         'stok',
         'min_stok',
+        'harga_beli',
+        'harga_jual',
         'deskripsi',
         'kategori_produk_id'
     ];
 
     public function kategori_produk(){
-        return $this->belongTo(KategoriProduk::class);
+        return $this->belongsTo(KategoriProduk::class);
     }
 
     public function getAllData(){
         $alldata = DB::table('produk')
         ->join('kategori_produk', 'produk.kategori_produk_id', '=', 'kategori_produk.id_kategori')
-        ->select('produk.*', 'kategori_produk.nama_kategori')
+        ->select('produk.*', 'kategori_produk.nama_kategori as nama_kategori')
         ->get();
         return $alldata;
     }

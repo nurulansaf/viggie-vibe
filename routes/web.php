@@ -6,6 +6,9 @@ use App\Http\Controllers\KategoriProdukController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\PublikController;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\MetodePembayaranController;
+use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\PesananItemController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -96,6 +99,25 @@ Route::prefix('admin')->group(function () {
      Route::post('/proses_editpesanan/{id}', [PesananController::class, 'update']);
      Route::get('/deletepesanan/{id}', [PesananController::class, 'destroy']);
 
+     // controller Metode Pembayaran
+     Route::get('/metodepembayaran', [MetodePembayaranController::class, 'index']); 
+     Route::get('/addmetodepembayaran', [MetodePembayaranController::class, 'create']);
+     Route::post('/storemetodepembayaran', [MetodePembayaranController::class, 'store']);
+     Route::get('/deletemetodepembayaran/{id}', [MetodePembayaranController::class, 'destroy']);
+
+     // Controller Pembayaran
+     Route::get('/pembayaran', [PembayaranController::class, 'index']); 
+     Route::get('/addpembayaran', [PembayaranController::class, 'create']);
+     Route::post('/storepembayaran', [PembayaranController::class, 'store']);
+     Route::get('/editpembayaran/{id}', [PembayaranController::class, 'edit']);
+     Route::post('/proses_editpembayaran/{id}', [PembayaranController::class, 'update']);
+     Route::get('/deletepembayaran/{id}', [PembayaranController::class, 'destroy']);
+
+     // Controller Pesanan Item
+     Route::get('/pesananitem', [PesananItemController::class, 'index']); 
+     Route::get('/addpesananitem', [PesananItemController::class, 'create']);
+     Route::post('/storepesananitem', [PesananItemController::class, 'store']);
+     Route::get('/deletepesananitem/{id}', [PesananItemController::class, 'destroy']);
 });
 });
 

@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\KategoriProduk;
+use App\Models\MetodePembayaran;
 use Illuminate\Support\Facades\DB;
 
-class KategoriProdukController extends Controller
+class MetodePembayaranController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $kategori_produk = new KategoriProduk();
-        return view('admin.kategori.kategori_produk', ['kategori_produk' => $kategori_produk->getALLData()]);
+        $metode_pembayaran = new MetodePembayaran();
+        return view('admin.metode.metode_pembayaran', ['metode_pembayaran' => $metode_pembayaran->getALLData()]);
     }
 
     /**
@@ -23,9 +23,9 @@ class KategoriProdukController extends Controller
     public function create()
     {
         //
-        // menampilkan seluruh data kategori produk
-        $kategori_produk = KategoriProduk::all();
-        return view('admin.kategori.add_kategoriproduk', compact('kategori_produk'));
+        // menampilkan seluruh data metode produk
+        $metode_pembayaran = MetodePembayaran::all();
+        return view('admin.metode.add_metode', compact('metode_pembayaran'));
     }
 
     /**
@@ -40,11 +40,11 @@ class KategoriProdukController extends Controller
         // save semua data ke dalam instance produk menggunakan method save
         // kembalikan ke tampilan produk, setelah klik button submit 
 
-        $kategori_produk = new KategoriProduk();
-        $kategori_produk->nama_kategori = $request->nama_kategori;
+        $metode_pembayaran = new MetodePembayaran();
+        $metode_pembayaran->nama_metode = $request->nama_metode;
 
-        $kategori_produk->save();
-        return redirect('admin/kategoriproduk');
+        $metode_pembayaran->save();
+        return redirect('admin/metodepembayaran');
     }
 
     /**
@@ -79,7 +79,7 @@ class KategoriProdukController extends Controller
         // buka tbale produk
         // cari data yang ingn di hapus berdasarkan id
         // hapus data menggunakan method delete()
-        DB::table('kategori_produk')->where('id_kategori', $id)->delete();
-        return redirect('admin/kategoriproduk');
+        DB::table('metode_pembayaran')->where('id_metode', $id)->delete();
+        return redirect('admin/metodepembayaran');
     }
 }

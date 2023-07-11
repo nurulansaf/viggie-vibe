@@ -1,19 +1,19 @@
 @extends('admin.layout.app')
 @section('content')
 <div class="container-fluid px-4">
-    <h1 class="mt-4">Data Kategori Produk</h1>
+    <h1 class="mt-4">Data Metode Pembayaran</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Dashboard</a></li>
-        <li class="breadcrumb-item active">Kategori Produk</li>
+        <li class="breadcrumb-item active">Metode Pembayaran</li>
     </ol>
 
     <div class="card mb-4">
         <div class="card-header">
-            <a href="{{ url('admin/addkategoriproduk') }}" class="btn btn-primary">Tambah Data</a>
+            <a href="{{ url('admin/addmetodepembayaran') }}" class="btn btn-primary">Tambah Data</a>
         </div>
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Data Kategori Produk
+            Data Metode Pembayaran
         </div>
         <div class="card-body">
             <table id="datatablesSimple">
@@ -28,12 +28,11 @@
                     @php
                        $no = 1; 
                     @endphp
-                    @foreach ($kategori_produk as $katprod)
+                    @foreach ($metode_pembayaran as $med)
                     <tr>
                         <td>{{ $no }}</td>
-                        <td>{{ $katprod->nama_kategori }}</td>
-                        <td><a href="{{ url('admin/editkategoriproduk') }}" class="btn btn-success">Edit</a></td>
-                        <td><a href="{{ url('admin/deletekategoriproduk/'. $katprod->id_kategori) }}" class="btn btn-danger">Delete</a></td>
+                        <td>{{ $med->nama_metode }}</td>
+                        <td><a href="{{ url('admin/deletemetodepembayaran/'. $med->id_metode) }}" class="btn btn-danger">Delete</a></td>
                     </tr>
                     @php
                         $no++

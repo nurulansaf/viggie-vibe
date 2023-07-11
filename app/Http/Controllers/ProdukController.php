@@ -42,12 +42,13 @@ class ProdukController extends Controller
         // kembalikan ke tampilan produk, setelah klik button submit 
 
         $produk = new Produk();
-        $produk->kode_produk               = $request->kode_produk;
-        $produk->nama_produk               = $request->nama_produk;
-        $produk->harga_jual         = $request->harga_jual;
-        $produk->harga_beli         = $request->harga_beli;
+        $produk->kode_produk        = $request->kode_produk;
+        $produk->nama_produk        = $request->nama_produk;
+        $produk->gambar_produk      = $request->gambar_produk;
         $produk->stok               = $request->stok;
         $produk->min_stok           = $request->min_stok;
+        $produk->harga_beli         = $request->harga_beli;
+        $produk->harga_jual         = $request->harga_jual;
         $produk->deskripsi          = $request->deskripsi;
         $produk->kategori_produk_id = $request->kategori_produk_id;
 
@@ -71,7 +72,7 @@ class ProdukController extends Controller
         //
         $kategori_produk = DB::table('kategori_produk')->get();
         $produk = DB::table('produk')->where('id_produk', $id)->get();
-        return view('admin.produk.edit_produk', compact('produk', 'kategori_produk'));
+        return view('admin.produk.edit_produk', compact('produk','kategori_produk'));
     }
 
     /**
@@ -81,12 +82,13 @@ class ProdukController extends Controller
     {
         // 
         $produk = Produk::find($request->id);
-        $produk->kode_produk               = $request->kode_produk;
-        $produk->nama_produk               = $request->nama_produk;
-        $produk->harga_jual         = $request->harga_jual;
-        $produk->harga_beli         = $request->harga_beli;
+        $produk->kode_produk        = $request->kode_produk;
+        $produk->nama_produk        = $request->nama_produk;
+        $produk->gambar_produk      = $request->gambar_produk;
         $produk->stok               = $request->stok;
         $produk->min_stok           = $request->min_stok;
+        $produk->harga_beli         = $request->harga_beli;
+        $produk->harga_jual         = $request->harga_jual;
         $produk->deskripsi          = $request->deskripsi;
         $produk->kategori_produk_id = $request->kategori_produk_id;
 
