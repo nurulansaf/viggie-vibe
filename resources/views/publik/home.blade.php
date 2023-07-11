@@ -210,7 +210,7 @@
       <div class="row">
         <div class="col-lg-9 mx-auto">
           <h2 class="fs-15 text-uppercase  text-muted text-center">Our News</h2>
-          <h3 class="display-4 mb-6 text-center">Artikel <span class="text-warning"> Klinik</span></h3>
+          <h3 class="display-4 mb-6 text-center">Artikel <span class="text-warning"> Viggie Vibe</span></h3>
         </div>
         <!-- /column -->
       </div>

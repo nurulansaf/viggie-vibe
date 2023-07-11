@@ -16,14 +16,12 @@ class Pesanan extends Model
     protected $primarykey = 'id';
 
     protected $fillable = [
-        'tanggal',
         'nama_pemesan',
-        'alamat_pemesan',
         'no_hp',
-        'email',
-        'jumlah_pesanan',
+        'alamat',
+        'tgl_pesanan',
         'deskripsi',
-        'produk_id'
+        'id_metode_pembayaran'
     ];
 
     public function produk(){
@@ -32,7 +30,7 @@ class Pesanan extends Model
 
     public function getAllData(){
         $alldata = DB::table('pesanan')
-        ->join('produk', 'pesanan.produk_id', '=', 'produk.id')
+        ->join('produk', 'pesanan.id_metode_pembayaran', '=', 'metode_pembayaran.id_metode')
         ->select('pesanan.*', 'produk.nama as nama_produk')
         ->get();
         return $alldata;
