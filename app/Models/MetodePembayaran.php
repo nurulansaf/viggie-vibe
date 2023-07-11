@@ -6,26 +6,22 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class KategoriProduk extends Model
+class MetodePembayaran extends Model
 {
     use HasFactory;
-    protected $table = 'kategori_produk';
+    protected $table = 'metode_pembayaran';
     
     public $timestamps = false;
     
-    protected $primarykey = 'id_kategori';
+    protected $primarykey = 'id_metode';
 
     protected $fillable = [
-        'nama_kategori'
+        'nama_metode'
     ];
 
-    public function produk(){
-        return $this->hasMany(Produk::class);
-    }
-
     public function getAllData(){
-        $alldata = DB::table('kategori_produk')
-        ->select('kategori_produk.*')
+        $alldata = DB::table('metode_pembayaran')
+        ->select('metode_pembayaran.*')
         ->get();
         return $alldata;
     }

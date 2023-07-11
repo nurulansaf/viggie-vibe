@@ -13,10 +13,11 @@ class Pesanan extends Model
     protected $table = 'pesanan';
 
     public $timestamps = false;
+
     protected $primarykey = 'id_pesanan';
 
     protected $fillable = [
-        'nama_pemesan',
+        'nama',
         'no_hp',
         'alamat',
         'tgl_pesanan',
@@ -24,8 +25,8 @@ class Pesanan extends Model
         'id_metode_pembayaran'
     ];
 
-    public function produk(){
-        return $this->belongTo(Produk::class);
+    public function metode_pembayaran(){
+        return $this->belongsTo(MetodePembayaran::class);
     }
     public function pesananitem(){
         return $this->hasMany(PesananItem::class);
@@ -33,9 +34,8 @@ class Pesanan extends Model
 
     public function getAllData(){
         $alldata = DB::table('pesanan')
-        ->join('pesanan_item', 'pesanan.id_pesanan', '=', 'pesanan_item.pesanan_id')
-        ->join('produk', 'pesanan_item.produk_id', '=', 'produk.id_produk')
-        ->select('pesanan.*', 'produk.nama_produk as nama_produk', 'pesanan_item.qty as jumlah_pesanan')
+        ->join('metode_pembayaran', 'pesanan.id_metode_pembayaran', '=', 'metode_pembayaran.id_metode')
+        ->select('pesanan.*', 'metode_pembayaran.nama_metode as nama_metode')
         ->get();
         return $alldata;
     }

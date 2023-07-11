@@ -1,4 +1,5 @@
- 
+<!-- Page Wrapper -->
+<div id="wrapper">
  <!-- Sidebar -->
  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -7,11 +8,8 @@
         <div class="text-center d-none d-md-inline">
             <button class="rounded-circle border-0 mb-0" id="sidebarToggle"></button>
         </div>
-        <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('admin/dashboard')}}">
-            <div class="sidebar-brand-text">Viggie Vibe</div>
-        </a>
-    </div>
+        <div class="sidebar-brand-text mx-3">ViggieVibe</div>
+    </a>
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
@@ -28,28 +26,56 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Interface
+        Data ViggieVibe
     </div>
 
-    <!-- Nav Item - Charts -->
+    <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link" href="/admin/kategoriproduk">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Kategori</span></a>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Data Produk</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Data Produk:</h6>
+                <a class="collapse-item" href="{{ url('admin/kategoriproduk') }}">Kategori Produk</a>
+                <a class="collapse-item" href="{{ url('admin/produk') }}">Produk</a>
+            </div>
+        </div>
     </li>
 
-    <!-- Nav Item - Tables -->
+    <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link" href="/admin/produk">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Produk</span></a>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+            aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Data Pesanan</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Data Pesanan:</h6>
+                <a class="collapse-item" href="{{ url('admin/pesanan') }}">Pesanan</a>
+                <a class="collapse-item" href="{{ url('admin/pesananitem') }}">Pesanan Item</a>
+            </div>
+        </div>
     </li>
-    
+
     <li class="nav-item">
-        <a class="nav-link" href="/admin/pesanan">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Pesanan</span></a>
-    </li>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Data Pembayaran</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Data Pembayaran</h6>
+                        <a class="collapse-item" href="{{ url('admin/metodepembayaran') }}">Metode Pembayaran</a>
+                        <a class="collapse-item" href="{{ url('admin/pembayaran') }}">Pembayaran</a>
+                    </div>
+                </div>
+            </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
@@ -64,3 +90,4 @@
 
 </ul>
 <!-- End of Sidebar -->
+</div>

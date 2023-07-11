@@ -1,5 +1,4 @@
 @extends('admin.layout.app')
-
 @section('content')
 <!-- code untuk form -->
 <form method="POST" action="{{ url('admin/storeproduk') }}">
@@ -12,27 +11,15 @@
         </div>
     </div>
     <div class="form-group row">
-        <label for="nama_produk" class="col-4 col-form-label">Nama Produk</label> 
+        <label for="nama_produk" class="col-4 col-form-label">Nama</label> 
         <div class="col-8">
         <input id="nama_produk" name="nama_produk" type="text" class="form-control" spellcheck="false" data-ms-editor="true">
         </div>
     </div>
     <div class="form-group row">
-        <label for="gambar_produk" class="col-4 col-form-label">Gambar Produk</label> 
+        <label for="gambar_produk" class="col-4 col-form-label">Gambar</label> 
         <div class="col-8">
         <input id="gambar_produk" name="gambar_produk" type="text" class="form-control" spellcheck="false" data-ms-editor="true">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="harga_jual" class="col-4 col-form-label">Harga Jual</label> 
-        <div class="col-8">
-        <input id="harga_jual" name="harga_jual" type="text" class="form-control" spellcheck="false" data-ms-editor="true">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="harga_beli" class="col-4 col-form-label">Harga Beli</label> 
-        <div class="col-8">
-        <input id="harga_beli" name="harga_beli" type="text" class="form-control" spellcheck="false" data-ms-editor="true">
         </div>
     </div>
     <div class="form-group row">
@@ -45,6 +32,18 @@
         <label for="min_stok" class="col-4 col-form-label">Min Stok</label> 
         <div class="col-8">
         <input id="min_stok" name="min_stok" type="text" class="form-control" spellcheck="false" data-ms-editor="true">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="harga_beli" class="col-4 col-form-label">Harga Beli</label> 
+        <div class="col-8">
+        <input id="harga_beli" name="harga_beli" type="text" class="form-control" spellcheck="false" data-ms-editor="true">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="harga_jual" class="col-4 col-form-label">Harga Jual</label> 
+        <div class="col-8">
+        <input id="harga_jual" name="harga_jual" type="text" class="form-control" spellcheck="false" data-ms-editor="true">
         </div>
     </div>
     <div class="form-group row">
@@ -65,7 +64,7 @@
     </div> 
     <div class="form-group row">
         <div class="offset-4 col-8">
-        <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+        <button name="submit" type="submit" class="btn btn-primary">Tambah</button>
         </div>
     </div>
 </form>

@@ -30,8 +30,9 @@ semua code yang ada di dalam file yang di extends -->
                         <th>No</th>
                         <th>Kode</th>
                         <th>Nama</th>
-                        <th>Harga Jual</th>
+                        <th>Gambar</th>
                         <th>Harga Beli</th>
+                        <th>Harga Jual</th>
                         <th>Stok</th>
                         <th>Minimal Stok</th>
                         <th>Deskripsi</th>
@@ -50,16 +51,15 @@ semua code yang ada di dalam file yang di extends -->
                         <td>{{ $no }}</td>
                         <td>{{ $prod->kode_produk }}</td>
                         <td>{{ $prod->nama_produk }}</td>
-                        <td>{{ $prod->harga_jual }}</td>
-                        <td>{{ $prod->harga_beli }}</td>
+                        <td>{{ $prod->gambar_produk }}</td>
                         <td>{{ $prod->stok }}</td>
                         <td>{{ $prod->min_stok }}</td>
+                        <td>{{ $prod->harga_beli }}</td>
+                        <td>{{ $prod->harga_jual }}</td>
                         <td>{{ $prod->deskripsi }}</td>
-                        <td>{{ $prod->kategori_produk_id }}</td>
-                        @if (Auth::user()->role == 'admin')
+                        <td>{{ $prod->nama_kategori }}</td>
                         <td><a href="{{ url('admin/editproduk/'. $prod->id_produk) }}" class="btn btn-success">Edit</a></td>
                         <td><a href="{{ url('admin/deleteproduk/'. $prod->id_produk) }}" class="btn btn-danger">Delete</a></td>
-                        @endif
                     </tr>
                     @php
                         $no++
