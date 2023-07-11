@@ -57,6 +57,7 @@ semua code yang ada di dalam file yang di extends -->
                         <td>{{ $prod->deskripsi }}</td>
                         <td>{{ $prod->kategori_produk_id }}</td>
                         @if (Auth::user()->role == 'admin')
+                        <td><a href="{{ url('admin/detailproduk/'. $prod->id_produk) }}" class="btn btn-info">Detail</a></td>
                         <td><a href="{{ url('admin/editproduk/'. $prod->id_produk) }}" class="btn btn-success">Edit</a></td>
                         <td><a href="{{ url('admin/deleteproduk/'. $prod->id_produk) }}" class="btn btn-danger">Delete</a></td>
                         @endif

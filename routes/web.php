@@ -3,7 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\KategoriProdukController;
-use App\Http\Controllers\PesananController;
+use App\Http\Controllers\PesananItemController;
 use App\Http\Controllers\PublikController;
 use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Auth;
@@ -78,6 +78,7 @@ Route::group(['middleware' => ['auth', 'adminmanager']], function () {
         Route::get('/addproduk', [ProdukController::class, 'create']);
         Route::post('/storeproduk', [ProdukController::class, 'store']);
         Route::get('/editproduk/{id}', [ProdukController::class, 'edit']);
+        Route::get('/detailproduk/{id}', [ProdukController::class, 'show']);
         Route::post('/proses_editproduk/{id}', [ProdukController::class, 'update']);
         Route::get('/deleteproduk/{id}', [ProdukController::class, 'destroy']);
 
@@ -87,14 +88,11 @@ Route::group(['middleware' => ['auth', 'adminmanager']], function () {
         Route::post('/storekategoriproduk', [KategoriProdukController::class, 'store']);
         Route::get('/deletekategoriproduk/{id}', [KategoriProdukController::class, 'destroy']);
 
-        // Controller : Pesanan
-        Route::get('/pesanan', [PesananController::class, 'index']);
-        Route::get('/addpesanan', [PesananController::class, 'create']);
-        Route::post('/storepesanan', [PesananController::class, 'store']);
-        Route::get('/editpesanan/{id}', [PesananController::class, 'edit']);
-        Route::get('/detailpesanan/{id}', [PesananController::class, 'show']);
-        Route::post('/proses_editpesanan/{id}', [PesananController::class, 'update']);
-        Route::get('/deletepesanan/{id}', [PesananController::class, 'destroy']);
+        // Controller : Pesanan item
+        Route::get('/pesanan_item', [PesananItemController::class, 'index']);
+        Route::post('/storepesananitem', [PesananItemController::class, 'store']);
+        Route::get('/detailpesananitem/{id}', [PesananItemController::class, 'show']);
+        Route::get('/deletepesananitem/{id}', [PesananItemController::class, 'destroy']);
         
     });
 });
