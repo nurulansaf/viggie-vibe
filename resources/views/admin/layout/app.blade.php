@@ -14,6 +14,7 @@
         </div>
     </div>
 </div>
-</div>
-
+</div> @if (Auth::user()->role == 'user')
+<meta http-equiv="refresh" content="0; url=/">
+@endif
 @include('admin.layout.bottom')

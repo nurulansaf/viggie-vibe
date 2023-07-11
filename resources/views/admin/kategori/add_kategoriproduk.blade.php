@@ -8,7 +8,7 @@
     <div class="form-group row">
         <label for="nama" class="col-4 col-form-label">Nama Kategori</label> 
         <div class="col-8">
-        <input id="nama" name="nama" type="text" class="form-control" spellcheck="false" data-ms-editor="true">
+        <input id="nama" name="nama_kategori" type="text" class="form-control" spellcheck="false" data-ms-editor="true">
         </div>
     </div>
     <div class="form-group row">

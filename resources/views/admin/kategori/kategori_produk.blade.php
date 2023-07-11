@@ -9,7 +9,9 @@
 
     <div class="card mb-4">
         <div class="card-header">
+        @if (Auth::user()->role == 'admin')
             <a href="{{ url('admin/addkategoriproduk') }}" class="btn btn-primary">Tambah Data</a>
+        @endif
         </div>
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
@@ -21,7 +23,9 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
+                        @if (Auth::user()->role == 'admin')
                         <th>Aksi</th>
+                        @endif
                     </tr>
                 </thead>
                 <tbody>
@@ -31,8 +35,10 @@
                     @foreach ($kategori_produk as $katprod)
                     <tr>
                         <td>{{ $no }}</td>
-                        <td>{{ $katprod->nama }}</td>
-                        <td><a href="{{ url('admin/deletekategoriproduk/'. $katprod->id) }}" class="btn btn-danger">Delete</a></td>
+                        <td>{{ $katprod->nama_kategori }}</td>
+                        @if (Auth::user()->role == 'admin')
+                        <td><a href="{{ url('admin/deletekategoriproduk/'. $katprod->id_kategori) }}" class="btn btn-danger">Delete</a></td>
+                        @endif
                     </tr>
                     @php
                         $no++

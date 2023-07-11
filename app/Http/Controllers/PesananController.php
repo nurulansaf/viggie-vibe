@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class PesananController extends Controller
 {
-    /**
+    /** 
      * Display a listing of the resource.
      */
     public function index()
@@ -18,7 +18,7 @@ class PesananController extends Controller
         return view('admin.pesanan.pesanan', ['pesanan' => $pesanan->getALLData()]);
     }
 
-    /**
+    /** 
      * Show the form for creating a new resource.
      */
     public function create()
@@ -31,7 +31,7 @@ class PesananController extends Controller
         return view('admin.pesanan.add_pesanan', compact('produk','pesanan'));
     }
 
-    /**
+    /** 
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
@@ -44,49 +44,49 @@ class PesananController extends Controller
         // kembalikan ke tampilan produk, setelah klik button submit 
 
         $pesanan = new Pesanan();
-        $pesanan->tanggal            = $request->tanggal;
-        $pesanan->nama_pemesan       = $request->nama_pemesan;
-        $pesanan->alamat_pemesan     = $request->alamat_pemesan;
-        $pesanan->no_hp              = $request->no_hp;
-        $pesanan->email              = $request->email;
-        $pesanan->jumlah_pesanan     = $request->jumlah_pesanan;
-        $pesanan->deskripsi          = $request->deskripsi;
-        $pesanan->produk_id          = $request->produk_id;
+        $pesanan->tgl_pesanan            = $request->tgl_pesanan;
+        $pesanan->nama                   = $request->nama;
+        $pesanan->alamat                 = $request->alamat;
+        $pesanan->no_hp                  = $request->no_hp;
+        $pesanan->deskripsi              = $request->deskripsi;
+        $pesanan->id_metode_pembayaran   = $request->id_metode_pembayaran;
 
         $pesanan->save();
         return redirect('admin/pesanan');
     }
 
-    /**
+    /** 
      * Display the specified resource.
      */
     public function show(string $id)
     {
-        //
+        $pesanan = Pesanan::where('id_pesanan', $id)->first();
+        $pesanan_item = DB::table('pesanan_item')->where('pesanan_id', $id)->get();
+        return view('admin.pesanan.show', [
+            'pesanan' => $pesanan, 
+            'pesanan_item' => $pesanan_item]);
     }
 
-    /**
+    /** 
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
     {
         $pesanan = DB::table('pesanan')->get();
-        $produk = DB::table('produk')->where('id', $id)->get();
+        $produk = DB::table('produk')->where('id_produk', $id)->get();
         return view('admin.pesanan.edit_pesanan', compact('produk', 'pesanan'));
     }
 
-    /**
+    /** 
      * Update the specified resource in storage.
      */
     public function update(Request $request)
     {
-        $pesanan = Pesanan::find($request->id);
-        $pesanan->tanggal            = $request->tanggal;
-        $pesanan->nama_pemesan       = $request->nama_pemesan;
-        $pesanan->alamat_pemesan     = $request->alamat_pemesan;
+        $pesanan = Pesanan::where('id_pesanan', $request->id)->first();
+        $pesanan->tgl_pesanan        = $request->tgl_pesanan;
+        $pesanan->nama               = $request->nama;
+        $pesanan->alamat             = $request->alamat;
         $pesanan->no_hp              = $request->no_hp;
-        $pesanan->email              = $request->email;
-        $pesanan->jumlah_pesanan     = $request->jumlah_pesanan;
         $pesanan->deskripsi          = $request->deskripsi;
         $pesanan->produk_id          = $request->produk_id;
 
@@ -102,7 +102,7 @@ class PesananController extends Controller
         // buka tbale pesanan
         // cari data yang ingn di hapus berdasarkan id
         // hapus data menggunakan method delete()
-        DB::table('pesanan')->where('id', $id)->delete();
+        DB::table('pesanan')->where('id_pesanan', $id)->delete();
         return redirect('admin/pesanan');
     }
 }
