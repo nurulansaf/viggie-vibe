@@ -28,8 +28,8 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 }
 
 // Bar Chart Example
-const chartData = {!! json_encode($chartData->pluck('total_pesanan')->toArray() ?? []) !!};
-const months = {!! json_encode($months->pluck('month')->toArray() ?? []) !!};
+const chartData = {!! json_encode($chartData->pluck('total_pesanan')->toArray(), JSON_NUMERIC_CHECK) !!};
+const months = {!! json_encode($chartData->pluck('month')->toArray(), JSON_NUMERIC_CHECK) !!};
 
 var ctx = document.getElementById("myBarChart");
 var myBarChart = new Chart(ctx, {
