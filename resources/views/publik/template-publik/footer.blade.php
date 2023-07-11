@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-3">
           <div class="widget">
-            <img class="mb-4" src="{{asset('publik/img/lg-vv.png')}}" width="200" srcset="{{asset('publik/img/lg-vv.png')}}" alt="" />
+            <img class="mb-4" src="{{asset('publik/img/lg-vv.png')}}" width="200" srcset="{{asset('publik/img/lg-vv.png')}}" alt="Viggie Vibe" />
             <p class="mb-4">© 2022 Viggie Vibe Shop <br class="d-none d-lg-block" />All rights reserved.</p>
             <nav class="nav social ">
               <a href="#"><i class="uil uil-twitter"></i></a>

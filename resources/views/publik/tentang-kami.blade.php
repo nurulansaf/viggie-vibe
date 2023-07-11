@@ -10,7 +10,7 @@
         <div class="col-md-8 col-lg-6 position-relative">
           <a href="https://www.youtube.com/watch?v=dUl3vRjjs40" class="btn btn-circle btn-primary btn-play ripple mx-auto mb-5 position-absolute" style="top:50%; left: 50%; transform: translate(-50%,-50%); z-index:3;" data-glightbox><i class="icn-caret-right"></i></a>
           <div class="shape rounded bg-soft-primary rellax d-md-block" data-rellax-speed="0" style="bottom: -1.8rem; right: -1.5rem; width: 85%; height: 90%; "></div>
-          <figure class="rounded"><img src="{{asset('publik/img/artikel/tentang.jpg')}}" srcset="{{asset('publik/img/artikel/tentang.jpg')}}" alt=""></figure>
+          <figure class="rounded"><img src="{{asset('publik/img/artikel/tentang.jpg')}}" srcset="{{asset('publik/img/artikel/tentang.jpg')}}" alt="Viggie Vibe"></figure>
         </div>
         <!--/column -->
         <div class="col-lg-5 offset-lg-1">
@@ -54,19 +54,19 @@
         <div class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <figure class="rounded"><img src="{{asset('publik/img/artikel/galeri1.jpg')}}" alt="" /></figure>
+              <figure class="rounded"><img src="{{asset('publik/img/artikel/galeri1.jpg')}}" alt="Viggie Vibe" /></figure>
             </div>
             <!--/.swiper-slide -->
             <div class="swiper-slide">
-              <figure class="rounded"><img src="{{asset('publik/img/artikel/galeri2.jpg')}}" alt="" /></figure>
+              <figure class="rounded"><img src="{{asset('publik/img/artikel/galeri2.jpg')}}" alt="Viggie Vibe" /></figure>
             </div>
             <!--/.swiper-slide -->
             <div class="swiper-slide">
-              <figure class="rounded"><img src="{{asset('publik/img/artikel/galeri3.jpg')}}" alt="" /></figure>
+              <figure class="rounded"><img src="{{asset('publik/img/artikel/galeri3.jpg')}}" alt="Viggie Vibe" /></figure>
             </div>
             <!--/.swiper-slide -->
             <div class="swiper-slide">
-              <figure class="rounded"><img src="{{asset('publik/img/artikel/galeri4.jpg')}}" alt="" /></figure>
+              <figure class="rounded"><img src="{{asset('publik/img/artikel/galeri4.jpg')}}" alt="Viggie Vibe" /></figure>
             </div>
           </div>
           <!--/.swiper-wrapper -->

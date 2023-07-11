@@ -10,6 +10,14 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+
+    protected $table = 'users';
+
+    public function scopeByRole($query, $role)
+    {
+        return $query->where('role', $role);
+    }
+    
     use HasApiTokens, HasFactory, Notifiable;
 
     /**

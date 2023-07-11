@@ -18,8 +18,8 @@ class Pesanan extends Model
     protected $fillable = [
         'nama_pemesan',
         'no_hp',
-        'email',
-        'jumlah_pesanan',
+        'alamat',
+        'tgl_pesanan',
         'deskripsi',
         'id_metode_pembayaran'
     ];
@@ -33,9 +33,16 @@ class Pesanan extends Model
 
     public function getAllData(){
         $alldata = DB::table('pesanan')
-        ->join('produk', 'pesanan.produk_id', '=', 'produk.id')
-        ->select('pesanan.*', 'produk.nama as nama_produk')
+        ->join('pesanan_item', 'pesanan.id_pesanan', '=', 'pesanan_item.pesanan_id')
+        ->join('produk', 'pesanan_item.produk_id', '=', 'produk.id_produk')
+        ->select('pesanan.*', 'produk.nama_produk as nama_produk', 'pesanan_item.qty as jumlah_pesanan')
         ->get();
         return $alldata;
+    }
+
+    // CHART TOTAL PESANAN
+    public function scopeByYear($query, $year)
+    {
+        return $query->whereYear('created_at', $year);
     }
 }

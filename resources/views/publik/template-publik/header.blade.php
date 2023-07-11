@@ -39,7 +39,7 @@
         <div class="container flex-lg-row flex-nowrap align-items-center">
           <div class="navbar-brand w-100">
             <a href="{{url('/')}}">
-              <img src="{{asset('publik/img/lg-vv.png')}}" srcset="{{asset('publik/img/lg-vv.png')}}" class="logo-img" alt="" />
+              <img src="{{asset('publik/img/lg-vv.png')}}" srcset="{{asset('publik/img/lg-vv.png')}}" class="logo-img" alt="Viggie Vibe" />
             </a>
           </div>
           <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">

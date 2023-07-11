@@ -28,17 +28,20 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 }
 
 // Bar Chart Example
+const chartData = {!! json_encode($chartData->pluck('total_pesanan')->toArray() ?? []) !!};
+const months = {!! json_encode($months->pluck('month')->toArray() ?? []) !!};
+
 var ctx = document.getElementById("myBarChart");
 var myBarChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["January", "February", "March", "April", "May", "June"],
+    labels: months,
     datasets: [{
       label: "Revenue",
       backgroundColor: "#4e73df",
       hoverBackgroundColor: "#2e59d9",
       borderColor: "#4e73df",
-      data: [4215, 5312, 6251, 7841, 9821, 14984],
+      data: chartData,
     }],
   },
   options: {

@@ -30,7 +30,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a href="{{url('/')}}">
-                    <img src="{{asset('publik/img/lg-klinik.png')}}" srcset="{{asset('publik/img/lg-klinik.png')}}" class="logo-img w-20" alt="" />
+                    <img src="{{asset('publik/img/lg-klinik.png')}}" srcset="{{asset('publik/img/lg-klinik.png')}}" class="logo-img w-20" alt="Viggie Vibe" />
                 </a>
                 {{-- <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}

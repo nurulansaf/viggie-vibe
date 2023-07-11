@@ -77,7 +77,7 @@
               <div class=" col-md-3 col-xl-3">
                 <div class="project item shadow rounded p-2 position-relative">
                   <figure class="rounded mb-6">
-                    <img src="https://www.tiffincurry.ca/wp-content/uploads/2021/02/default-product.png" srcset="https://www.tiffincurry.ca/wp-content/uploads/2021/02/default-product.png" alt="">
+                    <img src="https://www.tiffincurry.ca/wp-content/uploads/2021/02/default-product.png" srcset="https://www.tiffincurry.ca/wp-content/uploads/2021/02/default-product.png" alt="Viggie Vibe">
                     <a class="item-like" href="#" data-bs-toggle="white-tooltip" aria-label="Add to wishlist" data-bs-original-title="Add to wishlist"><i class="uil uil-heart"></i></a>
                     <a class="item-view" href="#" data-bs-toggle="white-tooltip" aria-label="Quick view" data-bs-original-title="Quick view"><i class="uil uil-eye"></i></a>
                     <a href="#" class="item-cart rounded"><i class="uil uil-shopping-bag"></i> Add to Cart</a>
@@ -187,13 +187,13 @@
         <div class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <figure class="rounded"><img src="https://images.unsplash.com/photo-1548104144-32c5171cf929?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1475&q=80" alt="" /></figure>
+              <figure class="rounded"><img src="https://images.unsplash.com/photo-1548104144-32c5171cf929?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1475&q=80" alt="Viggie Vibe" /></figure>
             </div>
             <div class="swiper-slide">
-              <figure class="rounded"><img src="https://images.unsplash.com/photo-1557333610-90ee4a951ecf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="" /></figure>
+              <figure class="rounded"><img src="https://images.unsplash.com/photo-1557333610-90ee4a951ecf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Viggie Vibe" /></figure>
             </div>
             <div class="swiper-slide">
-              <figure class="rounded"><img src="https://images.unsplash.com/photo-1553546895-531931aa1aa8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80" alt="" /></figure>
+              <figure class="rounded"><img src="https://images.unsplash.com/photo-1553546895-531931aa1aa8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80" alt="Viggie Vibe" /></figure>
             </div>
             <!--/.swiper-slide -->
           </div>
@@ -224,7 +224,7 @@
                 <div class="item-inner">
                   <article>
                     <div class="card">
-                      <figure class="card-img-top overlay overlay-1 hover-scale" style="height: 150px;overflow: hidden;"><a href="#"> <img src="https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="" /></a>
+                      <figure class="card-img-top overlay overlay-1 hover-scale" style="height: 150px;overflow: hidden;"><a href="#"> <img src="https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Viggie Vibe" /></a>
                         <figcaption>
                           <h5 class="from-top mb-0">Selengkapnya</h5>
                         </figcaption>
@@ -258,7 +258,7 @@
                 <div class="item-inner">
                   <article>
                     <div class="card">
-                      <figure class="card-img-top overlay overlay-1 hover-scale" style="height: 150px;overflow: hidden;"><a href="#"> <img src="https://akcdn.detik.net.id/community/media/visual/2022/04/04/ilustrasi-sayuran_169.jpeg?w=700&q=90" alt="" /></a>
+                      <figure class="card-img-top overlay overlay-1 hover-scale" style="height: 150px;overflow: hidden;"><a href="#"> <img src="https://akcdn.detik.net.id/community/media/visual/2022/04/04/ilustrasi-sayuran_169.jpeg?w=700&q=90" alt="Viggie Vibe" /></a>
                         <figcaption>
                           <h5 class="from-top mb-0">Selengkapnya</h5>
                         </figcaption>
@@ -292,7 +292,7 @@
                 <div class="item-inner">
                   <article>
                     <div class="card">
-                      <figure class="card-img-top overlay overlay-1 hover-scale" style="height: 150px;overflow: hidden;"><a href="#"> <img src="https://assets.kompasiana.com/items/album/2023/06/15/kacang-panjang-20180219-190836-648a6a4b4d498a0f763e60c3.jpg?t=o&v=770" alt="" /></a>
+                      <figure class="card-img-top overlay overlay-1 hover-scale" style="height: 150px;overflow: hidden;"><a href="#"> <img src="https://assets.kompasiana.com/items/album/2023/06/15/kacang-panjang-20180219-190836-648a6a4b4d498a0f763e60c3.jpg?t=o&v=770" alt="Viggie Vibe" /></a>
                         <figcaption>
                           <h5 class="from-top mb-0">Selengkapnya</h5>
                         </figcaption>
