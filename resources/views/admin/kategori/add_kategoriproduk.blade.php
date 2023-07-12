@@ -4,7 +4,7 @@
 <!-- code untuk form -->
 <form method="POST" action="{{ url('admin/storekategoriproduk') }}">
     {{ csrf_field() }}
-    <h4 style="text-align: center">Form Tambah Data Kategori Produk</h4>
+    <h4 style="text-align: center">Tambah Data Kategori Produk</h4>
     <div class="form-group row">
         <label for="nama_kategori" class="col-4 col-form-label">Nama Kategori</label> 
         <div class="col-8">

@@ -13,7 +13,7 @@ class KategoriProduk extends Model
     
     public $timestamps = false;
     
-    protected $primarykey = 'id_kategori';
+    protected $primarykey = 'id';
 
     protected $fillable = [
         'nama_kategori'

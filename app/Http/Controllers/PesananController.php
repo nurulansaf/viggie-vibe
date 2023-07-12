@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pesanan;
 use App\Models\MetodePembayaran;
+use App\Models\Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -23,12 +24,7 @@ class PesananController extends Controller
      */
     public function create()
     {
-        // menampilkan seluruh data kategori produk
-        $metode_pembayaran = MetodePembayaran::all();
-
-        // menampilkan seluruh data produk
-        $pesanan = Pesanan::all();
-        return view('admin.pesanan.add_pesanan', compact('metode_pembayaran','pesanan'));
+        //
     }
 
     /**
@@ -36,23 +32,7 @@ class PesananController extends Controller
      */
     public function store(Request $request)
     {
-        
-        // buat instance di ambil dari class produk
-        // ambil daata di input di form create menggunakan parameter request
-        // simpan data yang di ambil ke dalam colom table produk
-        // save semua data ke dalam instance produk menggunakan method save
-        // kembalikan ke tampilan produk, setelah klik button submit 
-
-        $pesanan = new Pesanan();
-        $pesanan->nama                 = $request->nama;
-        $pesanan->no_hp                = $request->no_hp;
-        $pesanan->alamat               = $request->alamat;
-        $pesanan->tgl_pesanan          = $request->tgl_pesanan;
-        $pesanan->deskripsi            = $request->deskripsi;
-        $pesanan->id_metode_pembayaran = $request->id_metode_pembayaran;
-
-        $pesanan->save();
-        return redirect('admin/pesanan');
+        // 
     }
 
     /**
@@ -60,7 +40,13 @@ class PesananController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $pesanan = Pesanan::find($id);
+        
+        $produk = Produk::find($id);
+
+        $metode_pembayaran = MetodePembayaran::find($id);
+
+        return view('admin.pesanan.detail_pesanan', compact('produk','metode_pembayaran', 'pesanan'));
     }
 
     /**
@@ -68,9 +54,7 @@ class PesananController extends Controller
      */
     public function edit(string $id)
     {
-        $metode_pembayaran = DB::table('metode_pembayaran')->get();
-        $pesanan = DB::table('pesanan')->where('id_pesanan', $id)->get();
-        return view('admin.pesanan.edit_pesanan', compact('metode_pembayaran', 'pesanan'));
+        //
     }
 
     /**
@@ -78,16 +62,7 @@ class PesananController extends Controller
      */
     public function update(Request $request)
     {
-        $pesanan = Pesanan::find($request->id);
-        $pesanan->nama                 = $request->nama;
-        $pesanan->no_hp                = $request->no_hp;
-        $pesanan->alamat               = $request->alamat;
-        $pesanan->tgl_pesanan          = $request->tgl_pesanan;
-        $pesanan->deskripsi            = $request->deskripsi;
-        $pesanan->id_metode_pembayaran = $request->id_metode_pembayaran;
-
-        $pesanan->save();
-        return redirect('admin/pesanan');
+        //
     }
 
     /**
@@ -98,7 +73,7 @@ class PesananController extends Controller
         // buka tbale pesanan
         // cari data yang ingn di hapus berdasarkan id
         // hapus data menggunakan method delete()
-        DB::table('pesanan')->where('id_pesanan', $id)->delete();
+        DB::table('pesanan')->where('id', $id)->delete();
         return redirect('admin/pesanan');
     }
 }

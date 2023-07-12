@@ -13,7 +13,7 @@ class MetodePembayaran extends Model
     
     public $timestamps = false;
     
-    protected $primarykey = 'id_metode';
+    protected $primarykey = 'id';
 
     protected $fillable = [
         'nama_metode'

@@ -1,7 +1,7 @@
 @extends('admin.layout.app')
 @section('content')
 <div class="container-fluid px-4">
-    <h1 class="mt-4">Data Metode Pembayaran</h1>
+    <h1 class="mt-4">Metode Pembayaran</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Dashboard</a></li>
         <li class="breadcrumb-item active">Metode Pembayaran</li>
@@ -32,7 +32,7 @@
                     <tr>
                         <td>{{ $no }}</td>
                         <td>{{ $med->nama_metode }}</td>
-                        <td><a href="{{ url('admin/deletemetodepembayaran/'. $med->id_metode) }}" class="btn btn-danger">Delete</a></td>
+                        <td><a href="{{ url('admin/deletemetodepembayaran/'. $med->id) }}" class="btn btn-danger">Delete</a></td>
                     </tr>
                     @php
                         $no++

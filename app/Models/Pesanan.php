@@ -14,13 +14,16 @@ class Pesanan extends Model
 
     public $timestamps = false;
 
-    protected $primarykey = 'id_pesanan';
+    protected $primarykey = 'id';
 
     protected $fillable = [
+        'produk_id',
         'nama',
         'no_hp',
         'alamat',
         'tgl_pesanan',
+        'qty',
+        'total_harga',
         'deskripsi',
         'id_metode_pembayaran'
     ];
@@ -31,8 +34,9 @@ class Pesanan extends Model
 
     public function getAllData(){
         $alldata = DB::table('pesanan')
-        ->join('metode_pembayaran', 'pesanan.id_metode_pembayaran', '=', 'metode_pembayaran.id_metode')
-        ->select('pesanan.*', 'metode_pembayaran.nama_metode as nama_metode')
+        ->join('produk', 'pesanan.produk_id', '=', 'produk.id')
+        ->join('metode_pembayaran', 'pesanan.id_metode_pembayaran', '=', 'metode_pembayaran.id')
+        ->select('pesanan.*', 'produk.nama_produk as nama_produk', 'metode_pembayaran.nama_metode as nama_metode')
         ->get();
         return $alldata;
     }

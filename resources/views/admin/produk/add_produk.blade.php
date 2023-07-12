@@ -3,7 +3,7 @@
 <!-- code untuk form -->
 <form method="POST" action="{{ url('admin/storeproduk') }}">
     {{ csrf_field() }}
-    <h4 style="text-align: center">Form Tambah Data Produk</h4>
+    <h4 style="text-align: center">Tambah Data Produk</h4>
     <div class="form-group row">
         <label for="kode_produk" class="col-4 col-form-label">Kode</label> 
         <div class="col-8">
@@ -19,7 +19,7 @@
     <div class="form-group row">
         <label for="gambar_produk" class="col-4 col-form-label">Gambar</label> 
         <div class="col-8">
-        <input id="gambar_produk" name="gambar_produk" type="text" class="form-control" spellcheck="false" data-ms-editor="true">
+        <input id="gambar_produk" name="gambar_produk" type="file" class="form-control" spellcheck="false" data-ms-editor="true">
         </div>
     </div>
     <div class="form-group row">
@@ -57,7 +57,7 @@
         <div class="col-8">
         <select id="kategori_produk_id" name="kategori_produk_id" class="custom-select">
             @foreach ($kategori_produk as $nama_kategori)
-                <option value="{{ $nama_kategori->id_kategori }}">{{ $nama_kategori->nama_kategori }}</option>
+                <option value="{{ $nama_kategori->id }}">{{ $nama_kategori->nama_kategori }}</option>
             @endforeach
         </select>
         </div>

@@ -5,10 +5,7 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\KategoriProdukController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\PublikController;
-use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MetodePembayaranController;
-use App\Http\Controllers\PembayaranController;
-use App\Http\Controllers\PesananItemController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -32,43 +29,6 @@ use App\Http\Controllers\ForminputController;
 
 Route::get('/', [PublikController::class, 'index']);
 
-
-Route::get('/salam', function () {
-    return "Selamat Siang Pak Rojul";
-});
-
-Route::get('/about', function () {
-    return "Nurul Anisa Fitriya - SI01";
-});
-
-Route::get('/tentang', function () {
-    return view('tentang', [
-        "nama" => "Nurul Anisa Fitriya",
-        "umur" => 20
-    ]);
-});
-
-Route::get('/nf', function () {
-    return view('nf', [
-        "nama" => "STT Terpadu Nurul Fikri",
-        "prodi" => "
-        Sistem Informasi,
-        Teknik Informatika &
-        Bisnis Digital
-        "
-    ]);
-});
-
-Route::get('/TugasTable', function () {
-    return view('table');
-});
-
-// TUGAS W9
-Route::prefix('Mahasiswa')->group(function () {
-    Route::get('/', [MahasiswaController::class, 'index']);
-    Route::post('/output_form', [MahasiswaController::class, 'output_form']);
-});
-
 // dashboadr
 Route::group(['middleware' => ['auth']], function(){
 Route::prefix('admin')->group(function () {
@@ -80,10 +40,10 @@ Route::prefix('admin')->group(function () {
     Route::get('/produk', [ProdukController::class, 'index']);
     Route::get('/addproduk', [ProdukController::class, 'create']);
     Route::post('/storeproduk', [ProdukController::class, 'store']);
+    Route::get('/detailproduk/{id}', [ProdukController::class, 'show']);
     Route::get('/editproduk/{id}', [ProdukController::class, 'edit']);
     Route::post('/proses_editproduk/{id}', [ProdukController::class, 'update']);
     Route::get('/deleteproduk/{id}', [ProdukController::class, 'destroy']);
-
 
     // Controller : Kategori Produk
     Route::get('/kategoriproduk', [KategoriProdukController::class, 'index']); 
@@ -93,10 +53,7 @@ Route::prefix('admin')->group(function () {
 
      // Controller : Pesanan
      Route::get('/pesanan', [PesananController::class, 'index']);
-     Route::get('/addpesanan', [PesananController::class, 'create']);
-     Route::post('/storepesanan', [PesananController::class, 'store']);
-     Route::get('/editpesanan/{id}', [PesananController::class, 'edit']);
-     Route::post('/proses_editpesanan/{id}', [PesananController::class, 'update']);
+     Route::get('/detailpesanan/{id}', [PesananController::class, 'show']);
      Route::get('/deletepesanan/{id}', [PesananController::class, 'destroy']);
 
      // controller Metode Pembayaran
@@ -104,20 +61,6 @@ Route::prefix('admin')->group(function () {
      Route::get('/addmetodepembayaran', [MetodePembayaranController::class, 'create']);
      Route::post('/storemetodepembayaran', [MetodePembayaranController::class, 'store']);
      Route::get('/deletemetodepembayaran/{id}', [MetodePembayaranController::class, 'destroy']);
-
-     // Controller Pembayaran
-     Route::get('/pembayaran', [PembayaranController::class, 'index']); 
-     Route::get('/addpembayaran', [PembayaranController::class, 'create']);
-     Route::post('/storepembayaran', [PembayaranController::class, 'store']);
-     Route::get('/editpembayaran/{id}', [PembayaranController::class, 'edit']);
-     Route::post('/proses_editpembayaran/{id}', [PembayaranController::class, 'update']);
-     Route::get('/deletepembayaran/{id}', [PembayaranController::class, 'destroy']);
-
-     // Controller Pesanan Item
-     Route::get('/pesananitem', [PesananItemController::class, 'index']); 
-     Route::get('/addpesananitem', [PesananItemController::class, 'create']);
-     Route::post('/storepesananitem', [PesananItemController::class, 'store']);
-     Route::get('/deletepesananitem/{id}', [PesananItemController::class, 'destroy']);
 });
 });
 
