@@ -19,7 +19,7 @@
     <div class="form-group row">
         <label for="gambar_produk" class="col-4 col-form-label">Gambar</label> 
         <div class="col-8">
-        <input id="gambar_produk" name="gambar_produk" type="text" class="form-control" spellcheck="false" data-ms-editor="true">
+        <input id="gambar_produk" name="gambar_produk" type="file" class="form-control" spellcheck="false" data-ms-editor="true">
         </div>
     </div>
     <div class="form-group row">

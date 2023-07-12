@@ -20947,7 +20947,8 @@ figure {
 figure img {
   width: 100%;
   max-width: 100%;
-  height: auto !important;
+  height: 100%;
+  object-fit: cover;
 }
 .img-blob img {
   -webkit-mask-position: center center;
@@ -36640,6 +36641,7 @@ video.player {
 .item figure,
 .swiper-slide figure {
   position: relative;
+  height: 200px;
 
 }
 .item figure .item-link,
@@ -36707,7 +36709,7 @@ video.player {
   opacity: 0;
   position: absolute;
   bottom: -2rem;
-  padding: 0.8rem;
+  padding: 0.3rem;
   margin: 0;
   left: 0;
   width: 100%;

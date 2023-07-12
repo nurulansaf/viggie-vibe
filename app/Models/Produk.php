@@ -14,7 +14,7 @@ class Produk extends Model
 
     public $timestamps = false;
 
-    protected $primarykey = 'id_produk';
+    protected $primarykey = 'id';
 
     protected $fillable = [
         'kode_produk',
@@ -34,9 +34,10 @@ class Produk extends Model
 
     public function getAllData(){
         $alldata = DB::table('produk')
-        ->join('kategori_produk', 'produk.kategori_produk_id', '=', 'kategori_produk.id_kategori')
+        ->join('kategori_produk', 'produk.kategori_produk_id', '=', 'kategori_produk.id')
         ->select('produk.*', 'kategori_produk.nama_kategori as nama_kategori')
         ->get();
         return $alldata;
     }
+
 }

@@ -79,7 +79,7 @@ class MetodePembayaranController extends Controller
         // buka tbale produk
         // cari data yang ingn di hapus berdasarkan id
         // hapus data menggunakan method delete()
-        DB::table('metode_pembayaran')->where('id_metode', $id)->delete();
+        DB::table('metode_pembayaran')->where('id', $id)->delete();
         return redirect('admin/metodepembayaran');
     }
 }

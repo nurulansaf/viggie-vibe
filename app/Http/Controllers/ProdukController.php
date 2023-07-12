@@ -62,6 +62,8 @@ class ProdukController extends Controller
     public function show(string $id)
     {
         //
+
+        
     }
 
     /**
@@ -81,7 +83,7 @@ class ProdukController extends Controller
     public function update(Request $request)
     {
         // 
-        $produk = Produk::find($request->id);
+        $produk = Produk::find($request->id_produk);
         $produk->kode_produk        = $request->kode_produk;
         $produk->nama_produk        = $request->nama_produk;
         $produk->gambar_produk      = $request->gambar_produk;

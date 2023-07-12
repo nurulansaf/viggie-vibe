@@ -21,7 +21,7 @@
         <div class="col-8">
         <select id="pesanan_id" name="pesanan_id" class="custom-select">
             @foreach ($pesanan as $psnn)
-                <option value="{{ $psnn->id_pesanan }}">{{ $psnn->nama }}</option>
+                <option value="{{ $psnn->id }}">{{ $psnn->nama }}</option>
             @endforeach
         </select>
         </div>

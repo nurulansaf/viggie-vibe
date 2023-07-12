@@ -28,7 +28,7 @@ class Pembayaran extends Model
 
     public function getAllData(){
         $alldata = DB::table('pembayaran')
-        ->join('pesanan', 'pembayaran.pesanan_id', '=', 'pesanan.id_pesanan')
+        ->join('pesanan', 'pembayaran.pesanan_id', '=', 'pesanan.id')
         ->select('pembayaran.*', 'pesanan.nama as nama_pemesan')
         ->get();
         return $alldata;

@@ -89,6 +89,8 @@ Route::prefix('admin')->group(function () {
 Route::prefix('Publik')->group(function () {
     Route::get('/Home', [PublikController::class, 'index']);
     Route::get('/tentang', [PublikController::class, 'tentangKami']);
+    Route::get('/pesanproduk/{id}', [PublikController::class, 'pesanProduk']);
+    Route::post('/prosesPesanProduk', [PublikController::class, 'prosesPesanproduk']);
 });
 
 Auth::routes();

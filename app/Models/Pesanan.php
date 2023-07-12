@@ -14,7 +14,7 @@ class Pesanan extends Model
 
     public $timestamps = false;
 
-    protected $primarykey = 'id_pesanan';
+    protected $primarykey = 'id';
 
     protected $fillable = [
         'nama',
@@ -22,7 +22,7 @@ class Pesanan extends Model
         'alamat',
         'tgl_pesanan',
         'deskripsi',
-        'id_metode_pembayaran'
+        'id_pembayaran'
     ];
 
     public function metode_pembayaran(){
@@ -34,7 +34,7 @@ class Pesanan extends Model
 
     public function getAllData(){
         $alldata = DB::table('pesanan')
-        ->join('metode_pembayaran', 'pesanan.id_metode_pembayaran', '=', 'metode_pembayaran.id_metode')
+        ->join('metode_pembayaran', 'pesanan.id_metode_pembayaran', '=', 'metode_pembayaran.id')
         ->select('pesanan.*', 'metode_pembayaran.nama_metode as nama_metode')
         ->get();
         return $alldata;

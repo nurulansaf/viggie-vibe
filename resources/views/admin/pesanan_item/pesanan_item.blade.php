@@ -43,8 +43,8 @@ semua code yang ada di dalam file yang di extends -->
                         <td>{{ $item->total }}</td>
                         <td>{{ $item->produk_id}}</td>
                         <td>{{ $item->pesanan_id }}</td>
-                        <td><a href="{{ url('admin/editpesananitem/'. $item->id_pesananitem) }}" class="btn btn-success">Edit</a></td>
-                        <td><a href="{{ url('admin/deletepesananitem/'. $item->id_pesananitem) }}" class="btn btn-danger">Delete</a></td>
+                        <td><a href="{{ url('admin/editpesananitem/'. $item->iditem) }}" class="btn btn-success">Edit</a></td>
+                        <td><a href="{{ url('admin/deletepesananitem/'. $item->iditem) }}" class="btn btn-danger">Delete</a></td>
                     </tr>
                     @php
                         $no++

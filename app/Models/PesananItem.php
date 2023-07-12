@@ -14,7 +14,7 @@ class PesananItem extends Model
     protected $table = 'pesanan_item';
 
     protected $fillable = [
-        'id_pesananitem',
+        'iditem',
         'qty',
         'total',
         'produk_id',

@@ -23,7 +23,7 @@ semua code yang ada di dalam file yang di extends -->
                     <tr>
                         <td>ID</td>
                         <td>:</td>
-                        <td>{{ $pesanan->id_pesanan }}</td>
+                        <td>{{ $pesanan->id }}</td>
                     </tr>
                     <tr>
                         <td>Tanggal</td>

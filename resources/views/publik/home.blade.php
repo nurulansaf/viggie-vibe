@@ -77,10 +77,21 @@
               <div class=" col-md-3 col-xl-3">
                 <div class="project item shadow rounded p-2 position-relative">
                   <figure class="rounded mb-6">
-                    <img src="https://www.tiffincurry.ca/wp-content/uploads/2021/02/default-product.png" srcset="https://www.tiffincurry.ca/wp-content/uploads/2021/02/default-product.png" alt="Viggie Vibe">
-                    <a class="item-like" href="#" data-bs-toggle="white-tooltip" aria-label="Add to wishlist" data-bs-original-title="Add to wishlist"><i class="uil uil-heart"></i></a>
-                    <a class="item-view" href="#" data-bs-toggle="white-tooltip" aria-label="Quick view" data-bs-original-title="Quick view"><i class="uil uil-eye"></i></a>
-                    <a href="#" class="item-cart rounded"><i class="uil uil-shopping-bag"></i> Add to Cart</a>
+
+                    @if($prod->gambar_produk)
+                        @php
+                            $gambarPath = public_path('publik/img/produk/' . $prod->gambar_produk);
+                        @endphp
+                        @if(file_exists($gambarPath))
+                            <img src="{{ asset('publik/img/produk/' . $prod->gambar_produk) }}" alt="Viggie Vibe">
+                        @else
+                            <img src="https://tokoikshopjualbelionline.websites.co.in/e-store/img/defaults/product-default.png" alt="Default Image">
+                        @endif
+                    @else
+                        <img src="https://tokoikshopjualbelionline.websites.co.in/e-store/img/defaults/product-default.png" alt="Default Image">
+                    @endif
+
+                    <a href="{{url('Publik/pesanproduk/'. $prod->id)}}" class="item-cart rounded"><i class="uil uil-shopping-bag"></i> Beli Sekarang</a>
                     <span class="avatar bg-pink text-white w-10 h-10 position-absolute text-uppercase fs-13" style="top: 1rem; left: 1rem;"><span>Sale!</span></span>
                   </figure>
                   <div class="post-header">

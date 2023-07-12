@@ -31,20 +31,10 @@ semua code yang ada di dalam file yang di extends -->
                         <th>Nama</th>
                         <th>No Handphone</th>
                         <th>Alamat</th>
-<<<<<<< HEAD
-                        <th>No Hp</th>
-                        <th>Jumlah</th>
-                        <th>Deskripsi</th>
-                        <th>Produk</th>
-                        @if (Auth::user()->role == 'admin')
-                        <th>Aksi</th>
-                        @endif
-=======
                         <th>Tanggal Pesanan</th>
                         <th>Deskripsi</th>
                         <th>Metode Pembayaran</th>
                         <th>Action</th>
->>>>>>> origin/ghaida
                     </tr>
                 </thead>
                 <tbody>
@@ -54,29 +44,14 @@ semua code yang ada di dalam file yang di extends -->
                     @foreach ($pesanan as $item)
                     <tr>
                         <td>{{ $no }}</td>
-<<<<<<< HEAD
-                        <td>{{ $item->tgl_pesanan }}</td>
-                        <td>{{ $item->nama }}</td>
-                        <td>{{ $item->alamat }}</td>
-                        <td>{{ $item->no_hp }}</td>
-                        <td>{{ $item->jumlah_pesanan }}</td>
-                        <td>{{ $item->deskripsi }}</td>
-                        <td>{{ $item->nama_produk }}</td>
-                        @if (Auth::user()->role == 'admin')
-                        <td><a href="{{ url('admin/detailpesanan/'. $item->id_pesanan) }}" class="btn btn-info">Detail</a></td>
-                        <td><a href="{{ url('admin/editpesanan/'. $item->id_pesanan) }}" class="btn btn-success">Edit</a></td>
-                        <td><a href="{{ url('admin/deletepesanan/'. $item->id_pesanan) }}" class="btn btn-danger">Delete</a></td>
-                        @endif
-=======
                         <td>{{ $item->nama }}</td>
                         <td>{{ $item->no_hp }}</td>
                         <td>{{ $item->alamat}}</td>
                         <td>{{ $item->tgl_pesanan }}</td>
                         <td>{{ $item->deskripsi }}</td>
                         <td>{{ $item->nama_metode }}</td>
-                        <td><a href="{{ url('admin/editpesanan/'. $item->id_pesanan) }}" class="btn btn-success">Edit</a></td>
-                        <td><a href="{{ url('admin/deletepesanan/'. $item->id_pesanan) }}" class="btn btn-danger">Delete</a></td>
->>>>>>> origin/ghaida
+                        <td><a href="{{ url('admin/editpesanan/'. $item->id) }}" class="btn btn-success">Edit</a></td>
+                        <td><a href="{{ url('admin/deletepesanan/'. $item->id) }}" class="btn btn-danger">Delete</a></td>
                     </tr>
                     @php
                         $no++

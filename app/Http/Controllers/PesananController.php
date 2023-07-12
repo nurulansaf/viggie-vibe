@@ -49,7 +49,7 @@ class PesananController extends Controller
         $pesanan->alamat               = $request->alamat;
         $pesanan->tgl_pesanan          = $request->tgl_pesanan;
         $pesanan->deskripsi            = $request->deskripsi;
-        $pesanan->id_metode_pembayaran = $request->id_metode_pembayaran;
+        $pesanan->id_pembayaran = $request->id_pembayaran;
 
         $pesanan->save();
         return redirect('admin/pesanan');
@@ -60,7 +60,7 @@ class PesananController extends Controller
      */
     public function show(string $id)
     {
-        $pesanan = Pesanan::where('id_pesanan', $id)->first();
+        $pesanan = Pesanan::where('id', $id)->first();
         $pesanan_item = DB::table('pesanan_item')->where('pesanan_id', $id)->get();
         return view('admin.pesanan.show', [
             'pesanan' => $pesanan, 
@@ -73,7 +73,7 @@ class PesananController extends Controller
     public function edit(string $id)
     {
         $metode_pembayaran = DB::table('metode_pembayaran')->get();
-        $pesanan = DB::table('pesanan')->where('id_pesanan', $id)->get();
+        $pesanan = DB::table('pesanan')->where('id', $id)->get();
         return view('admin.pesanan.edit_pesanan', compact('metode_pembayaran', 'pesanan'));
     }
 
@@ -88,7 +88,7 @@ class PesananController extends Controller
         $pesanan->alamat               = $request->alamat;
         $pesanan->tgl_pesanan          = $request->tgl_pesanan;
         $pesanan->deskripsi            = $request->deskripsi;
-        $pesanan->id_metode_pembayaran = $request->id_metode_pembayaran;
+        $pesanan->id_pembayaran = $request->id_pembayaran;
 
         $pesanan->save();
         return redirect('admin/pesanan');
@@ -102,7 +102,7 @@ class PesananController extends Controller
         // buka tbale pesanan
         // cari data yang ingn di hapus berdasarkan id
         // hapus data menggunakan method delete()
-        DB::table('pesanan')->where('id_pesanan', $id)->delete();
+        DB::table('pesanan')->where('id', $id)->delete();
         return redirect('admin/pesanan');
     }
 }

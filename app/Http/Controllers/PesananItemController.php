@@ -53,7 +53,7 @@ class PesananItemController extends Controller
     {
         $produk = DB::table('produk')->get();
         $pesanan = DB::table('pesanan')->get();
-        $pesanan_item = DB::table('pesanan_item')->where('id_pesananitem', $id)->get();
+        $pesanan_item = DB::table('pesanan_item')->where('iditem', $id)->get();
         return view('admin.produk.edit_pesananitem', compact('produk','pesanan','pesanan_item'));
     }
 
@@ -77,7 +77,7 @@ class PesananItemController extends Controller
      */
     public function destroy(string $id)
     {
-        DB::table('pesanan_item')->where('id_pesananitem', $id)->delete();
+        DB::table('pesanan_item')->where('iditem', $id)->delete();
         return redirect('admin/pesanan_item');
     }
 }
