@@ -61,7 +61,9 @@ class ProdukController extends Controller
      */
     public function show(string $id)
     {
-        //
+            $kategori_produk = Produk::find('kategori_produk')->get();
+            $produk = DB::table('produk')->where('id', $id)->get();
+            return view('admin.produk.show', compact('produk', 'kategori_produk'));
     }
 
     /**
@@ -71,7 +73,7 @@ class ProdukController extends Controller
     {
         //
         $kategori_produk = DB::table('kategori_produk')->get();
-        $produk = DB::table('produk')->where('id_produk', $id)->get();
+        $produk = DB::table('produk')->where('id', $id)->get();
         return view('admin.produk.edit_produk', compact('produk', 'kategori_produk'));
     }
 

@@ -8,30 +8,28 @@ semua code yang ada di dalam file yang di extends -->
 
 @section('content')
 <div class="container-fluid px-4">
-    <h1 class="mt-4">Produk</h1>
+    <h1 class="mt-4">Pesanan</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Dashboard</a></li>
-        <li class="breadcrumb-item active">Produk</li>
+        <li class="breadcrumb-item active">Pesanan</li>
     </ol>
     <div class="card mb-4">
         <div class="card-header">
-            <a href="{{ url('admin/addproduk') }}" class="btn btn-primary">Tambah Data</a>
-        </div>
-        <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Data Produk
+            Data Pesanan
         </div>
         <div class="card-body">
             <table id="datatablesSimple">
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Kode</th>
-                        <th>Nama</th>
-                        <th>Stok</th>
-                        <th>Harga Jual</th>
+                        <th>Nama Pemesan</th>
+                        <th>Nama Produk</th>
+                        <th>Tanggal Pesanan</th>
+                        <th>Qty</th>
+                        <th>Total Harga</th>
                         <th>Deskripsi</th>
-                        <th>Kategori Produk</th>
+                        <th>Metode Pembayaran</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -39,19 +37,19 @@ semua code yang ada di dalam file yang di extends -->
                     @php
                         $no = 1;
                     @endphp
-                    @foreach ($produk as $prod)
+                    @foreach ($pesanan as $item)
                     <tr>
                         <td>{{ $no }}</td>
-                        <td>{{ $prod->kode_produk }}</td>
-                        <td>{{ $prod->nama_produk }}</td>
-                        <td>{{ $prod->stok }}</td>
-                        <td>{{ $prod->harga_jual }}</td>
-                        <td>{{ $prod->deskripsi }}</td>
-                        <td>{{ $prod->nama_kategori }}</td>
-                        <td><a href="{{ url('admin/detailproduk/'. $prod->id) }}" class="btn btn-info">Detail</a></td>
+                        <td>{{ $item->nama }}</td>
+                        <td>{{ $item->nama_produk }}</td>
+                        <td>{{ $item->tgl_pesanan }}</td>
+                        <td>{{ $item->qty }}</td>
+                        <td>{{ $item->total_harga }}</td>
+                        <td>{{ $item->deskripsi }}</td>
+                        <td>{{ $item->nama_metode }}</td>
+                        <td><a href="{{ url('admin/detailpesanan/'. $item->id) }}" class="btn btn-info">Detail</a></td>
                         @if (Auth::user()->role == 'admin')
-                        <td><a href="{{ url('admin/editproduk/'. $prod->id) }}" class="btn btn-success">Edit</a></td>
-                        <td><a href="{{ url('admin/deleteproduk/'. $prod->id) }}" class="btn btn-danger">Delete</a></td>
+                        <td><a href="{{ url('admin/deletepesanan/'. $item->id) }}" class="btn btn-danger">Delete</a></td>
                         @endif
                     </tr>
                     @php

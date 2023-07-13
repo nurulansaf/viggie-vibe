@@ -78,9 +78,9 @@ Route::group(['middleware' => ['auth', 'adminmanager']], function () {
         Route::get('/addproduk', [ProdukController::class, 'create']);
         Route::post('/storeproduk', [ProdukController::class, 'store']);
         Route::get('/editproduk/{id}', [ProdukController::class, 'edit']);
-        Route::get('/detailproduk/{id}', [ProdukController::class, 'show']);
         Route::post('/proses_editproduk/{id}', [ProdukController::class, 'update']);
         Route::get('/deleteproduk/{id}', [ProdukController::class, 'destroy']);
+        Route::get('/detailproduk/{id}', [ProdukController::class, 'show']);
 
         // Controller : Kategori Produk
         Route::get('/kategoriproduk', [KategoriProdukController::class, 'index']);

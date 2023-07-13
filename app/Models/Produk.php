@@ -26,8 +26,11 @@ class Produk extends Model
         'kategori_produk_id'
     ];
 
+    public function produk(){
+        return $this->belongTo(Produk::class);
+    }
     public function kategori_produk(){
-        return $this->belongTo(KategoriProduk::class);
+        return $this->hasMany(KategoriProduk::class);
     }
 
     public function getAllData(){
