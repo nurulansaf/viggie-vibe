@@ -63,7 +63,8 @@ class ProdukController extends Controller
     {
         $produk = Produk::find($id);
 
-        $kategori_produk = KategoriProduk::find($id);
+        // Untuk mencari id produk yang ada pada data pesanan yang dipilih
+        $kategori_produk = KategoriProduk::where('id', $produk->kategori_produk_id)->first();
 
         return view('admin.produk.detail_produk', compact('kategori_produk', 'produk'));
     }
@@ -85,7 +86,7 @@ class ProdukController extends Controller
     public function update(Request $request)
     {
         // 
-        $produk = Produk::find($request->id_produk);
+        $produk = Produk::find($request->id);
         $produk->kode_produk        = $request->kode_produk;
         $produk->nama_produk        = $request->nama_produk;
         $produk->gambar_produk      = $request->gambar_produk;

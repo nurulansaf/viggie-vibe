@@ -7,7 +7,7 @@
   <meta name="description" content="An impressive and flawless site template that includes various UI elements and countless features, attractive ready-made blocks and rich pages, basically everything you need to create a unique and professional website.">
   <meta name="keywords" content="bootstrap 5, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template">
   <meta name="author" content="elemis">
-  <title>Viggie Vibe - E Commerce</title>
+  <title>Homepage | Viggie Vibe - E Commerce</title>
   <link rel="shortcut icon" href="{{asset('publik/img/lg-vv-fav.png')}}">
   <link rel="stylesheet" href="{{asset('publik/css/plugins.css')}}">
   <link rel="stylesheet" href="{{asset('publik/css/style.css')}}">
@@ -50,7 +50,7 @@
             <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
               <ul class="navbar-nav">
                 <li class="nav-item dropdown">
-                  <a class="nav-link" href="{{url('Publik/tentang')}}">Tentang Kami</a>
+                  <a class="nav-link" href="#hero"><i class='bx bxs-home-smile text-warning'></i></a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link" href="#produk">Produk</a>
@@ -105,7 +105,7 @@
                   @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
+                            Selamat Datang, <span class="text-success">{{ Auth::user()->name }}</span>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

@@ -2,7 +2,7 @@
 {{-- extend digunakan untuk dapat memanggil semua code yang ada di dalam file tersebut --}}
 
 @section('content')
-<section class="wrapper bg-dark">
+<section id="hero" class="wrapper bg-dark">
   <div class="swiper-container swiper-hero dots-over" data-margin="0" data-autoplay="true" data-autoplaytime="7000" data-nav="true" data-dots="true" data-items="1">
     <div class="swiper">
       <div class="swiper-wrapper">
@@ -91,7 +91,12 @@
                         <img src="https://tokoikshopjualbelionline.websites.co.in/e-store/img/defaults/product-default.png" alt="Default Image">
                     @endif
 
-                    <a href="{{url('Publik/pesanproduk/'. $prod->id)}}" class="item-cart rounded"><i class="uil uil-shopping-bag"></i> Beli Sekarang</a>
+                    @if (Auth::check() && Auth::user()->role == 'user')
+                      <a href="{{ url('Publik/pesanproduk/'. $prod->id) }}" class="item-cart rounded">
+                          <i class="uil uil-shopping-bag"></i> Beli Sekarang
+                      </a>
+                    @endif
+                    
                     <span class="avatar bg-pink text-white w-10 h-10 position-absolute text-uppercase fs-13" style="top: 1rem; left: 1rem;"><span>Sale!</span></span>
                   </figure>
                   <div class="post-header">
@@ -99,7 +104,7 @@
                       <div class="post-category text-ash mb-0">{{ $prod->nama_kategori }}</div>
                       <span class="ratings five"></span>
                     </div>
-                    <h2 class="post-title h3 fs-22"><a href="./shop-product.html" class="link-dark">{{ $prod->nama_produk }}</a></h2>
+                    <h2 class="post-title h3 fs-22">{{ $prod->nama_produk }}</h2>
                     <p class="price"><del><span class="amount">{{ $prod->harga_jual }}</span></del> </p>
                   </div>
                   <!-- /.post-header -->

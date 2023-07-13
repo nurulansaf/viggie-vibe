@@ -25,8 +25,19 @@ class Pesanan extends Model
         'qty',
         'total_harga',
         'deskripsi',
-        'id_pembayaran'
+        'id_metode_pembayaran'
     ];
+
+    // Model Pesanan
+    public function pesanan()
+    {
+        return $this->belongsTo(Pesanan::class);
+    }
+    // Model Produk
+    public function produk(){
+        return $this->belongsTo(Produk::class);
+    }
+
 
     public function metode_pembayaran(){
         return $this->belongsTo(MetodePembayaran::class);

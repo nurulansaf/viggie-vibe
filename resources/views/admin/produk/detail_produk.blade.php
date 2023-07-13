@@ -59,7 +59,7 @@
                             <tr>
                                 <td>Kategori Produk</td>
                                 <td>:</td>
-                                <td>{{ $produk->kategori_produk_id }}</td>
+                                <td>{{ $kategori_produk->nama_kategori }}</td>
                             </tr>
                         </table>
                     </div>

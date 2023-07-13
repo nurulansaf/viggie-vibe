@@ -23,7 +23,9 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
+                        @if (Auth::user()->role == 'admin')
                         <th>Action</th>
+                        @endif
                     </tr>
                 </thead>
                 <tbody>
@@ -34,7 +36,9 @@
                     <tr>
                         <td>{{ $no }}</td>
                         <td>{{ $katprod->nama_kategori }}</td>
+                        @if (Auth::user()->role == 'admin')
                         <td><a href="{{ url('admin/deletekategoriproduk/'. $katprod->id) }}" class="btn btn-danger">Delete</a></td>
+                        @endif
                     </tr>
                     @php
                         $no++

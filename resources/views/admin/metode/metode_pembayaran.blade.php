@@ -8,9 +8,11 @@
     </ol>
 
     <div class="card mb-4">
+        @if (Auth::user()->role == 'admin')
         <div class="card-header">
             <a href="{{ url('admin/addmetodepembayaran') }}" class="btn btn-primary">Tambah Data</a>
         </div>
+        @endif
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
             Data Metode Pembayaran
@@ -32,7 +34,9 @@
                     <tr>
                         <td>{{ $no }}</td>
                         <td>{{ $med->nama_metode }}</td>
+                        @if (Auth::user()->role == 'admin')
                         <td><a href="{{ url('admin/deletemetodepembayaran/'. $med->id) }}" class="btn btn-danger">Delete</a></td>
+                        @endif
                     </tr>
                     @php
                         $no++

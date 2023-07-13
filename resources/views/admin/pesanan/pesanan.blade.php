@@ -48,7 +48,9 @@ semua code yang ada di dalam file yang di extends -->
                         <td>{{ $item->deskripsi }}</td>
                         <td>{{ $item->nama_metode }}</td>
                         <td><a href="{{ url('admin/detailpesanan/'. $item->id) }}" class="btn btn-info">Detail</a></td>
+                        @if (Auth::user()->role == 'admin')
                         <td><a href="{{ url('admin/deletepesanan/'. $item->id) }}" class="btn btn-danger">Delete</a></td>
+                        @endif
                     </tr>
                     @php
                         $no++

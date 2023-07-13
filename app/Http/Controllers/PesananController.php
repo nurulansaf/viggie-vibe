@@ -45,7 +45,7 @@ class PesananController extends Controller
         $pesanan->alamat               = $request->alamat;
         $pesanan->tgl_pesanan          = $request->tgl_pesanan;
         $pesanan->deskripsi            = $request->deskripsi;
-        $pesanan->id_pembayaran = $request->id_pembayaran;
+        $pesanan->id_metode_pembayaran = $request->id_metode_pembayaran;
 
         $pesanan->save();
         return redirect('admin/pesanan');
@@ -58,12 +58,20 @@ class PesananController extends Controller
     {
         $pesanan = Pesanan::find($id);
         
-        $produk = Produk::find($id);
+        // Untuk mencari id produk yang ada pada data pesanan yang dipilih
+        $produk = Produk::where('id', $pesanan->produk_id)->first();
 
-        $metode_pembayaran = MetodePembayaran::find($id);
+         // Untuk mencari id metode yang ada pada data pesanan yang dipilih
+        $metode_pembayaran = MetodePembayaran::where('id', $pesanan->id_metode_pembayaran)->first();
 
-        return view('admin.pesanan.detail_pesanan', compact('produk','metode_pembayaran', 'pesanan'));
+
+        return view('admin.pesanan.detail_pesanan', [
+            'produk' => $produk,
+            'metode_pembayaran' => $metode_pembayaran, 
+            'pesanan' => $pesanan
+        ]);
     }
+    
 
     /** 
      * Show the form for editing the specified resource.

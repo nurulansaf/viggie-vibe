@@ -23,7 +23,7 @@ use App\Http\Controllers\ForminputController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+ 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -31,7 +31,7 @@ use App\Http\Controllers\ForminputController;
 Route::get('/', [PublikController::class, 'index']);
 
 // dashboadr
-Route::group(['middleware' => ['auth']], function(){
+Route::group(['middleware' => ['auth', 'adminmanager']], function(){
 Route::prefix('admin')->group(function () {
     // Controller : Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index']);
@@ -74,7 +74,3 @@ Route::prefix('Publik')->group(function () {
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/pesanan_item', function () {
-    return '';
-});

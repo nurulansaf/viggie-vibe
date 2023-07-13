@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>VIGGIE VIBE</title>
+    <title>Dashboard | Viggie Vibe</title>
     <link rel="shortcut icon" href="{{asset('publik/img/lg-vv-fav.png')}}">
 
     <!-- Custom fonts for this template-->
@@ -34,7 +34,7 @@
 
     {{-- logo vv --}}
     <div class="w-100">
-        <a href="{{url('/')}}">
+        <a href="{{url('admin/dashboard')}}">
             <img src="{{asset('publik/img/lg-vv.png')}}" srcset="{{asset('publik/img/lg-vv.png')}}" class="logo-img" width="200" alt="Viggie Vibe" />
         </a>
     </div>
@@ -116,7 +116,13 @@
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{Auth::user()->name}}</span>
+                @if (Auth::user()->role == 'admin')
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">ADMIN || {{Auth::user()->name}}</span>
+                @endif
+
+                @if (Auth::user()->role == 'manager')
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">MANAGER ||| {{Auth::user()->name}}</span>
+                @endif
                 <img class="img-profile rounded-circle"
                     src="{{asset('admin/img/undraw_profile.svg')}}">
             </a>

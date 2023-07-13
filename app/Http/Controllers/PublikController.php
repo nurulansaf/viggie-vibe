@@ -9,6 +9,7 @@ use App\Models\MetodePembayaran;
 use App\Models\KategoriProduk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class PublikController extends Controller
 {
@@ -41,8 +42,9 @@ class PublikController extends Controller
         // detail produk
         $produk = Produk::find($id);
         
-        // detail kategori produk
-        $kproduk = KategoriProduk::find($id);
+        // Untuk mencari id produk yang ada pada data pesanan yang dipilih
+        $kproduk = KategoriProduk::where('id', $produk->kategori_produk_id)->first();
+
 
         return view('publik.pesan-produk', [
             'metode_pembayaran' => $metode_pembayaran,

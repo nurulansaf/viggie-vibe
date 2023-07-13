@@ -14,11 +14,11 @@ semua code yang ada di dalam file yang di extends -->
         <li class="breadcrumb-item active">Produk</li>
     </ol>
     <div class="card mb-4">
-        <div class="card-header">
         @if (Auth::user()->role == 'admin')
+        <div class="card-header">
             <a href="{{ url('admin/addproduk') }}" class="btn btn-primary">Tambah Data</a>
-        @endif
         </div>
+        @endif
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
             Data Produk
@@ -34,9 +34,7 @@ semua code yang ada di dalam file yang di extends -->
                         <th>Harga Jual</th>
                         <th>Deskripsi</th>
                         <th>Kategori Produk</th>
-                        @if (Auth::user()->role == 'admin')
                         <th>Action</th>
-                        @endif
                     </tr>
                 </thead>
                 <tbody>
@@ -53,8 +51,10 @@ semua code yang ada di dalam file yang di extends -->
                         <td>{{ $prod->deskripsi }}</td>
                         <td>{{ $prod->nama_kategori }}</td>
                         <td><a href="{{ url('admin/detailproduk/'. $prod->id) }}" class="btn btn-info">Detail</a></td>
+                        @if (Auth::user()->role == 'admin')
                         <td><a href="{{ url('admin/editproduk/'. $prod->id) }}" class="btn btn-success">Edit</a></td>
                         <td><a href="{{ url('admin/deleteproduk/'. $prod->id) }}" class="btn btn-danger">Delete</a></td>
+                        @endif
                     </tr>
                     @php
                         $no++
