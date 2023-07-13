@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pesanan;
 use App\Models\MetodePembayaran;
+use App\Models\Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -23,12 +24,7 @@ class PesananController extends Controller
      */
     public function create()
     {
-        // menampilkan seluruh data kategori produk
-        $metode_pembayaran = MetodePembayaran::all();
-
-        // menampilkan seluruh data produk
-        $pesanan = Pesanan::all();
-        return view('admin.pesanan.add_pesanan', compact('metode_pembayaran','pesanan'));
+        //
     }
 
     /** 
@@ -60,11 +56,13 @@ class PesananController extends Controller
      */
     public function show(string $id)
     {
-        $pesanan = Pesanan::where('id', $id)->first();
-        $pesanan_item = DB::table('pesanan_item')->where('pesanan_id', $id)->get();
-        return view('admin.pesanan.show', [
-            'pesanan' => $pesanan, 
-            'pesanan_item' => $pesanan_item]);
+        $pesanan = Pesanan::find($id);
+        
+        $produk = Produk::find($id);
+
+        $metode_pembayaran = MetodePembayaran::find($id);
+
+        return view('admin.pesanan.detail_pesanan', compact('produk','metode_pembayaran', 'pesanan'));
     }
 
     /** 

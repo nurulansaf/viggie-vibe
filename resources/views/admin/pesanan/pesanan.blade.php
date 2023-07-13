@@ -8,17 +8,12 @@ semua code yang ada di dalam file yang di extends -->
 
 @section('content')
 <div class="container-fluid px-4">
-    <h1 class="mt-4">Data Pesanan</h1>
+    <h1 class="mt-4">Pesanan</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Dashboard</a></li>
         <li class="breadcrumb-item active">Pesanan</li>
     </ol>
     <div class="card mb-4">
-        <div class="card-header">
-        @if (Auth::user()->role == 'admin')
-            <a href="{{ url('admin/addpesanan') }}" class="btn btn-primary">Tambah Data</a>
-        @endif
-        </div>
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
             Data Pesanan
@@ -28,10 +23,11 @@ semua code yang ada di dalam file yang di extends -->
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama</th>
-                        <th>No Handphone</th>
-                        <th>Alamat</th>
+                        <th>Nama Pemesan</th>
+                        <th>Nama Produk</th>
                         <th>Tanggal Pesanan</th>
+                        <th>Qty</th>
+                        <th>Total Harga</th>
                         <th>Deskripsi</th>
                         <th>Metode Pembayaran</th>
                         <th>Action</th>
@@ -45,12 +41,13 @@ semua code yang ada di dalam file yang di extends -->
                     <tr>
                         <td>{{ $no }}</td>
                         <td>{{ $item->nama }}</td>
-                        <td>{{ $item->no_hp }}</td>
-                        <td>{{ $item->alamat}}</td>
+                        <td>{{ $item->nama_produk }}</td>
                         <td>{{ $item->tgl_pesanan }}</td>
+                        <td>{{ $item->qty }}</td>
+                        <td>{{ $item->total_harga }}</td>
                         <td>{{ $item->deskripsi }}</td>
                         <td>{{ $item->nama_metode }}</td>
-                        <td><a href="{{ url('admin/editpesanan/'. $item->id) }}" class="btn btn-success">Edit</a></td>
+                        <td><a href="{{ url('admin/detailpesanan/'. $item->id) }}" class="btn btn-info">Detail</a></td>
                         <td><a href="{{ url('admin/deletepesanan/'. $item->id) }}" class="btn btn-danger">Delete</a></td>
                     </tr>
                     @php

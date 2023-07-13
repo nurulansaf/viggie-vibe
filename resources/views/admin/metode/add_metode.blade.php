@@ -4,7 +4,7 @@
 <!-- code untuk form -->
 <form method="POST" action="{{ url('admin/storemetodepembayaran') }}">
     {{ csrf_field() }}
-    <h4 style="text-align: center">Form Tambah Data Metode Pembayaran</h4>
+    <h4 style="text-align: center">Tambah Data Metode Pembayaran</h4>
     <div class="form-group row">
         <label for="nama_metode" class="col-4 col-form-label">Metode Pembayaran</label> 
         <div class="col-8">

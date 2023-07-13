@@ -8,7 +8,7 @@ semua code yang ada di dalam file yang di extends -->
 
 @section('content')
 <div class="container-fluid px-4">
-    <h1 class="mt-4">Data Produk</h1>
+    <h1 class="mt-4">Produk</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Dashboard</a></li>
         <li class="breadcrumb-item active">Produk</li>
@@ -30,11 +30,8 @@ semua code yang ada di dalam file yang di extends -->
                         <th>No</th>
                         <th>Kode</th>
                         <th>Nama</th>
-                        <th>Gambar</th>
-                        <th>Harga Beli</th>
-                        <th>Harga Jual</th>
                         <th>Stok</th>
-                        <th>Minimal Stok</th>
+                        <th>Harga Jual</th>
                         <th>Deskripsi</th>
                         <th>Kategori Produk</th>
                         @if (Auth::user()->role == 'admin')
@@ -51,15 +48,13 @@ semua code yang ada di dalam file yang di extends -->
                         <td>{{ $no }}</td>
                         <td>{{ $prod->kode_produk }}</td>
                         <td>{{ $prod->nama_produk }}</td>
-                        <td>{{ $prod->gambar_produk }}</td>
                         <td>{{ $prod->stok }}</td>
-                        <td>{{ $prod->min_stok }}</td>
-                        <td>{{ $prod->harga_beli }}</td>
                         <td>{{ $prod->harga_jual }}</td>
                         <td>{{ $prod->deskripsi }}</td>
                         <td>{{ $prod->nama_kategori }}</td>
-                        <td><a href="{{ url('admin/editproduk/'. $prod->id_produk) }}" class="btn btn-success">Edit</a></td>
-                        <td><a href="{{ url('admin/deleteproduk/'. $prod->id_produk) }}" class="btn btn-danger">Delete</a></td>
+                        <td><a href="{{ url('admin/detailproduk/'. $prod->id) }}" class="btn btn-info">Detail</a></td>
+                        <td><a href="{{ url('admin/editproduk/'. $prod->id) }}" class="btn btn-success">Edit</a></td>
+                        <td><a href="{{ url('admin/deleteproduk/'. $prod->id) }}" class="btn btn-danger">Delete</a></td>
                     </tr>
                     @php
                         $no++

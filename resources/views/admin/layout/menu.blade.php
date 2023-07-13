@@ -58,7 +58,6 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Data Pesanan:</h6>
                 <a class="collapse-item" href="{{ url('admin/pesanan') }}">Pesanan</a>
-                <a class="collapse-item" href="{{ url('admin/pesananitem') }}">Pesanan Item</a>
             </div>
         </div>
     </li>
@@ -73,7 +72,6 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Data Pembayaran</h6>
                 <a class="collapse-item" href="{{ url('admin/metodepembayaran') }}">Metode Pembayaran</a>
-                <a class="collapse-item" href="{{ url('admin/pembayaran') }}">Pembayaran</a>
             </div>
         </div>
     </li>

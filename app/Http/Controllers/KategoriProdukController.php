@@ -79,7 +79,7 @@ class KategoriProdukController extends Controller
         // buka tbale produk
         // cari data yang ingn di hapus berdasarkan id
         // hapus data menggunakan method delete()
-        DB::table('kategori_produk')->where('id_kategori', $id)->delete();
+        DB::table('kategori_produk')->where('id', $id)->delete();
         return redirect('admin/kategoriproduk');
     }
 }
