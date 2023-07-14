@@ -97,7 +97,7 @@ class ProdukController extends Controller
         $produk->deskripsi          = $request->deskripsi;
         $produk->kategori_produk_id = $request->kategori_produk_id;
 
-        // $produk->save();
+        $produk->save();
 
 
         return redirect('admin/produk');
